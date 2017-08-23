@@ -734,7 +734,6 @@ section.home #open-video-cta a:before {
     height: 1.33em;
     font-size: 1.4em;
     margin-right: .8em;
-    background-image: url(../assets/images/watch-film.png);
     background-size: 100% auto;
     background-repeat: no-repeat
 }
