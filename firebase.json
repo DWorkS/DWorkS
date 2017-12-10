@@ -10,6 +10,16 @@
         "key" : "Cache-Control",
         "value" : "max-age=0"
       } ]
-    }]
+    }],
+    "redirects": [{
+      "source" : "/acrypto/",
+      "destination" : "https://acrypto.io",
+      "type" : 301
+    },
+    {
+      "source" : "/acrypto",
+      "destination" : "https://acrypto.io",
+      "type" : 301
+     }]
   }
 }
