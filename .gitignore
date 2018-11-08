@@ -63,3 +63,29 @@ functions/service-account.json
 ## ignore generated JavaScript files
 functions/**/*.js
 functions/**/*.js.map
+
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+yarn-error.log
+
+# Nuxt build
+.idea
+*.iml
+.nuxt
+
+# Nuxt generate
+dist/
+public/
+
+#PWA
+sw.*
+
+.env
+
+static/manifest*.json
+static/sw.js
+static/workbox-sw*.js*
+public/index.html
