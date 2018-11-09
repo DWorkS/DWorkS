@@ -104,9 +104,9 @@ export const state = () => ({
       url: 'https://github.com/1hakr/ATaxer'
     }
   ],
-  currentTitle: 'DevMentor',
+  currentTitle: 'DWorkS',
   appName: 'DWorkS',
-  appDomain : 'devmentor.co',
+  appDomain : 'dworks.io',
   user: {},
   token: '',
 })

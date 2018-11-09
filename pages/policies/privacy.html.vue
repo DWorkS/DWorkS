@@ -87,11 +87,11 @@
       }
     },
     asyncData ({ store }) {
-      store.commit('SET_CURRENT_TITLE', `About Us`)
+      store.commit('SET_CURRENT_TITLE', `Privacy Policy`)
     },
     head () {
       return {
-        title: `About Us`,
+        title: `Privacy Policy`,
         titleTemplate: '%s - DWorkS',
         meta: [
           { name: 'description', hid: 'description', content: 'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world' }

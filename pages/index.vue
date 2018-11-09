@@ -24,49 +24,51 @@
       <div class="scrollable">
         <v-container fluid grid-list-md>
           <h2 class="pl-5 ml-1 pt-3 pb-3 white--text headline font-weight-light">Microstartups</h2>
-          <v-layout px-5 pb-3 row wrap>
-            <v-flex x12 sm6 md6 v-for="project in this.$store.state.projects" :key="project.title">
-              <v-card class="ma-1" hover>
-                <v-card-media class="white--text" :src="project.imgUrl">
-                </v-card-media>
-                <v-card-title primary-title class="halfway">
-                  <h2 class="headline">{{ project.title }}</h2>
-                  <v-btn absolute dark fab top right 
-                  color="secondary"
-                  :title="project.tag"
-                  target="_blank"
-                  :href="project.url">
-                    <v-icon>open_in_new</v-icon>
-                  </v-btn>
-                </v-card-title>
-                <v-card-text class="pt-0">
-                  {{ project.content }}
-                </v-card-text>
-              </v-card>
-            </v-flex>
-          </v-layout>
-          <h2 class="pl-5 ml-1 pb-3 white--text headline font-weight-light">Opensource</h2>
-          <v-layout px-5 pb-2 row wrap>
-            <v-flex x12 sm6 md6 v-for="project in this.$store.state.opensource" :key="project.title">
-              <v-card class="ma-1" hover>
-                <v-card-media class="white--text" :src="project.imgUrl">
-                </v-card-media>
-                <v-card-title primary-title class="halfway">
-                  <h2 class="headline">{{ project.title }}</h2>
-                  <v-btn absolute dark fab top right 
-                  color="secondary"
-                  :title="project.tag"
-                  target="_blank"
-                  :href="project.url">
-                    <v-icon>open_in_new</v-icon>
-                  </v-btn>
-                </v-card-title>
-                <v-card-text class="pt-0">
-                  {{ project.content }}
-                </v-card-text>
-              </v-card>
-            </v-flex>
-          </v-layout>
+          <div class="padequaldiv">
+            <v-layout pb-3 row wrap>
+              <v-flex x12 sm6 md6 v-for="project in this.$store.state.projects" :key="project.title">
+                <v-card class="ma-1" hover>
+                  <v-card-media class="white--text" :src="project.imgUrl">
+                  </v-card-media>
+                  <v-card-title primary-title class="halfway">
+                    <h2 class="headline">{{ project.title }}</h2>
+                    <v-btn absolute dark fab top right 
+                    color="secondary"
+                    :title="project.tag"
+                    target="_blank"
+                    :href="project.url">
+                      <v-icon>open_in_new</v-icon>
+                    </v-btn>
+                  </v-card-title>
+                  <v-card-text class="pt-0">
+                    {{ project.content }}
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+            <h2 class="pl-5 ml-1 pb-3 white--text headline font-weight-light">Opensource</h2>
+            <v-layout pb-2 row wrap>
+              <v-flex x12 sm6 md6 v-for="project in this.$store.state.opensource" :key="project.title">
+                <v-card class="ma-1" hover>
+                  <v-card-media class="white--text" :src="project.imgUrl">
+                  </v-card-media>
+                  <v-card-title primary-title class="halfway">
+                    <h2 class="headline">{{ project.title }}</h2>
+                    <v-btn absolute dark fab top right 
+                    color="secondary"
+                    :title="project.tag"
+                    target="_blank"
+                    :href="project.url">
+                      <v-icon>open_in_new</v-icon>
+                    </v-btn>
+                  </v-card-title>
+                  <v-card-text class="pt-0">
+                    {{ project.content }}
+                  </v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </div>
         </v-container>
       </div>
     </v-flex>

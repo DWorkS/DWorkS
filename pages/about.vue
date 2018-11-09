@@ -12,7 +12,7 @@
             </a>
             <div class="pa-3">
             <span>
-              DevMentor helps anyone who wants get support from experts for their jobs, projects or anything. 
+              DWorkS helps anyone who wants get support from experts for their jobs, projects or anything. 
               You can easily get the consistent support on daily basis easily now.
             </span>
             </div>

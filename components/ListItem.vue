@@ -21,7 +21,7 @@ export default {
       switch (id) {
         case 'Email' :
           const email = 'support@dworks.io'
-          const subject = 'DevMentor Feedback'
+          const subject = 'DWorkS Feedback'
           document.location = 'mailto:' + email + '?subject=' + subject
           break
         case 'Dworks' :

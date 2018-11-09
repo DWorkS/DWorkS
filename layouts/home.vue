@@ -71,7 +71,7 @@
         meta: [
           { hid: 'description', name: 'description', content: description },
           { property: 'og:title', hid: 'og:title', content: formattedTitle },
-          { property: 'og:site_name', hid: 'og:site_name', content: 'DevMentor' },
+          { property: 'og:site_name', hid: 'og:site_name', content: 'DWorKS' },
           { property: 'og:url', content: this.getFullUrl(this.$route.path) },
           { property: 'og:image', content: this.getFullUrl('/feature_graphic.jpg') },
           { property: 'og:description', hid: 'og:description', content: description },
