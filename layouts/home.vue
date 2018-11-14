@@ -1,5 +1,5 @@
 <template>
-  <v-app class="primary">
+  <v-app dark class="primary">
     <span itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="DWorkS"/>
       <link itemprop="url" href="https://dworks.io/"/>

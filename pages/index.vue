@@ -3,10 +3,10 @@
     <v-flex xs12 md4>
       <div class="ma-5 pt-5 text-xs-center">
         <v-avatar size="125px" color="transparent">
-          <img src="logo.png">
+          <v-img src="logo.png" alt="DWorkS logo"/>
         </v-avatar>
         <div class="white--text display-1 font-weight-medium">DWorkS</div>
-        <div class="subheading text-xs-center grey--text pt-1 pb-3">To make a small difference</div>
+        <h1 class="subheading text-xs-center white--text pt-1 pb-3">Build microstartups and open source projects to make a small difference</h1>
         <v-layout mt-5 justify-center row wrap>
           <v-btn
             v-for="item in this.$store.state.contactItems"
@@ -23,13 +23,12 @@
     <v-flex xs12 md8>
       <div class="scrollable">
         <v-container fluid grid-list-md>
-          <h2 class="pl-5 ml-1 pt-3 pb-3 white--text headline font-weight-light">Microstartups</h2>
           <div class="padequaldiv">
+            <h2 class="ml-1 pt-3 pb-3 white--text headline font-weight-light">Microstartups</h2>
             <v-layout pb-3 row wrap>
               <v-flex x12 sm6 md6 v-for="project in this.$store.state.projects" :key="project.title">
                 <v-card class="ma-1" hover>
-                  <v-card-media class="white--text" :src="project.imgUrl">
-                  </v-card-media>
+                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-1"/>
                   <v-card-title primary-title class="halfway">
                     <h2 class="headline">{{ project.title }}</h2>
                     <v-btn absolute dark fab top right 
@@ -46,12 +45,11 @@
                 </v-card>
               </v-flex>
             </v-layout>
-            <h2 class="pl-5 ml-1 pb-3 white--text headline font-weight-light">Opensource</h2>
+            <h2 class="ml-1 pb-3 white--text headline font-weight-light">Opensource</h2>
             <v-layout pb-2 row wrap>
               <v-flex x12 sm6 md6 v-for="project in this.$store.state.opensource" :key="project.title">
                 <v-card class="ma-1" hover>
-                  <v-card-media class="white--text" :src="project.imgUrl">
-                  </v-card-media>
+                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-4"/>
                   <v-card-title primary-title class="halfway">
                     <h2 class="headline">{{ project.title }}</h2>
                     <v-btn absolute dark fab top right 

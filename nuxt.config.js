@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const nodeExternals = require('webpack-node-externals')
 
-const themeColor = '#7C5852'
+const themeColor = '#2C2C2C'
 const appName = 'DWorkS'
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
     ],
     link: [
       { hid: 'apple-touch-icon', rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-      { rel: 'mask-icon', color: '#7C5852', href: '/safari-pinned-tab.svg' },
+      { rel: 'mask-icon', color: '#2C2C2C', href: '/safari-pinned-tab.svg' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'shortcut icon', href: '/favicon.ico' }
     ]
@@ -73,7 +73,7 @@ module.exports = {
   manifest: {
     name: appName,
     short_name: appName,
-    description: 'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world.',
+    description: 'Bulding microstartups and opensource projects to make a small difference in the world.',
     author: 'Hari Krishna Dulipudi',
     background_color: themeColor,
     theme_color: themeColor,

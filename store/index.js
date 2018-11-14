@@ -16,8 +16,8 @@ export const state = () => ({
   ],
   footerItems: [
     { title: 'Home', to: '/' },
-    { title: 'Terms', to: '/policies/terms' },
-    { title: 'Privacy', to: '/policies/privacy' }
+    { title: 'Terms', to: '/policies/terms.html' },
+    { title: 'Privacy', to: '/policies/privacy.html' }
   ],
   footerSocialItems: [
     { img: 'facebook.svg', title: 'Facebook', url: 'https://www.facebook.com/1DWorkS' },
