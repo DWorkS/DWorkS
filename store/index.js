@@ -32,32 +32,18 @@ export const state = () => ({
   ],
   projects: [
     {
+      title: 'Visa List',
+      tag: 'visalist',
+      content: 'Find all the countries you can visit on your passport and know the visa requirements',
+      imgUrl: '/visalist-background.jpg',
+      url: 'https://visalist.io'
+    },
+    {
       title: 'DevMentor',
       tag: 'devmentor',
       content: 'Get live programming help from expert Developers from around the world',
       imgUrl: '/devmentor-background.jpg',
       url: 'https://devmentor.co'
-    },
-    {
-      title: 'ALauncher',
-      tag: 'alauncher',
-      content: 'Simple launcher with app lock, google feed, themes for phones, tablets and TV',
-      imgUrl: '/alauncher-background.jpg',
-      url: 'https://play.google.com/store/apps/details?id=dev.dworks.apps.alauncher'
-    },
-    {
-      title: 'AWatch',
-      tag: 'awatch',
-      content: 'Elegant watch face for wear os watches and screensaver for phones, tablets and TV',
-      imgUrl: '/awatch-background.jpg',
-      url: 'https://play.google.com/store/apps/details?id=dev.dworks.apps.awatch'
-    },
-    {
-      title: 'Visa List: Know where you can go',
-      tag: 'visalist',
-      content: 'Find all the countries you can visit on your passport and know the visa requirements',
-      imgUrl: '/visalist-background.jpg',
-      url: 'https://visalist.io'
     },
     {
       title: 'ACrypto: Cryptocurrency Tracker',
@@ -72,6 +58,20 @@ export const state = () => ({
       content: 'Simple All-in-one file manager for phone, tablets, watches, chromebook and TV',
       imgUrl: '/anexplorer-background.jpg',
       url: 'https://anexplorer.co'
+    },
+    {
+      title: 'ALauncher',
+      tag: 'alauncher',
+      content: 'Simple launcher with app lock, google feed, themes for phones, tablets and TV',
+      imgUrl: '/alauncher-background.jpg',
+      url: 'https://play.google.com/store/apps/details?id=dev.dworks.apps.alauncher'
+    },
+    {
+      title: 'AWatch',
+      tag: 'awatch',
+      content: 'Elegant watch face for wear os watches and screensaver for phones, tablets and TV',
+      imgUrl: '/awatch-background.jpg',
+      url: 'https://play.google.com/store/apps/details?id=dev.dworks.apps.awatch'
     }
   ],
   opensource: [
