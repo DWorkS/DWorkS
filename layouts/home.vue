@@ -16,6 +16,12 @@
     <v-content>
       <nuxt />
     </v-content>
+    <v-snackbar :timeout="0" color="#ffffff" :top="true" :multi-line="true" v-model="snackbar" class="black--text">
+      <span>
+      🏆😻 <b>VisaList</b> is Nominated at Golden Kitty Awards 2018 for Side Project!
+      </span>
+      <v-btn color="#DA552F" @click="openProductHunt()">&nbsp;&nbsp;&nbsp;Vote now&nbsp;&nbsp;&nbsp;</v-btn>
+    </v-snackbar>
     <!-- <Footer /> -->
   </v-app>
 </template>
@@ -29,6 +35,7 @@
     data() {
       return {
         sidebar: false,
+        snackbar: false,
         colored: false,
         dialog: false,
         menuItems: [
@@ -40,6 +47,11 @@
       toolbarColor: function () {
         return this.colored ? 'primary' : 'transparent'
       }
+    },
+    mounted () {
+      this.$nextTick(() => {
+        this.snackbar = true
+      })
     },
     methods: {
       onNavigation(section){
@@ -60,6 +72,10 @@
         const host = process.server ? this.$store.state.appDomain : window.location.host
         const barehost = host.replace('www.', '')
         return `https://${barehost}${path}`
+      },
+      openProductHunt(){
+        this.snackbar = false
+        window.open('https://www.producthunt.com/golden-kitty-awards-2018#side-project', '_blank').focus()
       }
     },
     head () {

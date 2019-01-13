@@ -43,8 +43,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify',
-    { src: '~/plugins/producthunt.js', ssr: false },
+    '@/plugins/vuetify'
   ],
 
   /*
