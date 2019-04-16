@@ -1,5 +1,5 @@
 require('dotenv').config()
-
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 const nodeExternals = require('webpack-node-externals')
 
 const themeColor = '#2C2C2C'
@@ -36,7 +36,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/assets/style/app.styl'
+    '~/assets/style/app.styl',
+    '@mdi/font/css/materialdesignicons.min.css'
   ],
 
   /*
@@ -116,12 +117,16 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-   extractCSS: true,
-   optimization: {
-     splitChunks: {
-       name: false
-     }
-   },
+    transpile: ['vuetify/lib'],
+    plugins: [
+      new VuetifyLoaderPlugin()
+    ],
+    extractCSS: true,
+    optimization: {
+      splitChunks: {
+        name: false
+      }
+    },
     extend (config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({

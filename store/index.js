@@ -9,10 +9,10 @@ export const state = () => ({
     { divider: true }
   ],
   contactItems: [
-    { title: 'Email', icon:'mdi-email', to: 'mailto:hello@dworks.io' },
-    { title: 'Twitter', icon:'mdi-twitter', to: 'https://twitter.com/1hakr/' },
-    { title: 'Telegram', icon:'mdi-telegram', to: 'http://t.me/dworks' },
-    { title: 'Github', icon:'mdi-github-circle', to: 'https://github.com/dworks' },
+    { title: 'Email', icon: 'mdi-email', to: 'mailto:hello@dworks.io' },
+    { title: 'Twitter', icon: 'mdi-twitter', to: 'https://twitter.com/1hakr/' },
+    { title: 'Telegram', icon: 'mdi-telegram', to: 'http://t.me/dworks' },
+    { title: 'Github', icon: 'mdi-github-circle', to: 'https://github.com/dworks' }
   ],
   footerItems: [
     { title: 'Home', to: '/' },
@@ -37,13 +37,6 @@ export const state = () => ({
       content: 'Find all the countries you can visit on your passport and know the visa requirements',
       imgUrl: '/visalist-background.jpg',
       url: 'https://visalist.io'
-    },
-    {
-      title: 'DevMentor',
-      tag: 'devmentor',
-      content: 'Get live programming help from expert Developers from around the world',
-      imgUrl: '/devmentor-background.jpg',
-      url: 'https://devmentor.co'
     },
     {
       title: 'ACrypto: Cryptocurrency Tracker',
@@ -106,9 +99,9 @@ export const state = () => ({
   ],
   currentTitle: 'DWorkS',
   appName: 'DWorkS',
-  appDomain : 'dworks.io',
+  appDomain: 'dworks.io',
   user: {},
-  token: '',
+  token: ''
 })
 
 export const mutations = {
@@ -120,10 +113,10 @@ export const mutations = {
   },
   SET_TOKEN (state, payload) {
     state.token = payload
-  },
+  }
 }
 
 export default {
   state: state,
-  mutations: mutations,
+  mutations: mutations
 }

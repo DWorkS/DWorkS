@@ -1,14 +1,14 @@
 <template>
-  <a class="my-2 v-list__tile v-list__tile--link" @click="openLinks(id)" :title="title" target="_blank">
+  <a class="my-2 v-list__tile v-list__tile--link" :title="title" target="_blank" @click="openLinks(id)">
     <div v-if="image" class="v-list__tile__avatar">
       <v-avatar size="35">
         <img :src="image">
       </v-avatar>
     </div>
     <div v-else class="v-list__tile__avatar">
-      <v-icon>{{icon}}</v-icon>
+      <v-icon>{{ icon }}</v-icon>
     </div>
-    <v-list-tile-title>{{title}}</v-list-tile-title>
+    <v-list-tile-title>{{ title }}</v-list-tile-title>
   </a>
 </template>
 

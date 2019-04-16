@@ -8,17 +8,17 @@
           color="white" pa-0
           :title="item.title"
           :target="item.to.startsWith('https') ? `_blank` : ``"
-          flat small round :href="item.to" >
+          flat small round :href="item.to">
           {{ item.title }}
         </v-btn>
       </v-layout>
       <v-layout row justify-center wrap>
         <v-btn flat target="_blank" title="dworks" href="https://dworks.io/">
-          <img src="/dworks_app.svg" alt="dworks logo" >
+          <img src="/dworks_app.svg" alt="dworks logo">
         </v-btn>
         <strong v-show="false" wrap justify-center class="subheading text-xs-center">Dev Mentors just for you!</strong>
         <v-card-actions class="hidden-xs-only mx-5 justify-center">
-          <div>&copy; {{ new Date().getFullYear() }} - <strong>{{this.$store.state.appName}}</strong></div>
+          <div>&copy; {{ new Date().getFullYear() }} - <strong>{{ this.$store.state.appName }}</strong></div>
         </v-card-actions>
         <v-btn
           v-for="icon in this.$store.state.footerSocialItems"
@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  export default {
+export default {
 
-  }
+}
 </script>

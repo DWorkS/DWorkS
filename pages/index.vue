@@ -3,10 +3,14 @@
     <v-flex xs12 md4>
       <div class="ma-5 pt-5 text-xs-center">
         <v-avatar size="125px" color="transparent">
-          <v-img src="logo.png" alt="DWorkS logo"/>
+          <v-img src="logo.png" alt="DWorkS logo" />
         </v-avatar>
-        <div class="white--text display-1 font-weight-medium">DWorkS</div>
-        <h1 class="subheading text-xs-center white--text pt-1 pb-3">Build microstartups and open source projects to make a small difference</h1>
+        <div class="white--text display-1 font-weight-medium">
+          DWorkS
+        </div>
+        <h1 class="subheading text-xs-center white--text pt-1 pb-3">
+          Build microstartups and open source projects to make a small difference
+        </h1>
         <v-layout mt-5 justify-center row wrap>
           <v-btn
             v-for="item in this.$store.state.contactItems"
@@ -14,8 +18,10 @@
             color="white" pa-0
             :title="item.title"
             :target="item.to.startsWith('https') ? `_blank` : ``"
-            flat round :href="item.to" >
-            <v-icon left dark>{{ item.icon }}</v-icon> {{ item.title }}
+            flat round :href="item.to">
+            <v-icon left dark>
+              {{ item.icon }}
+            </v-icon> {{ item.title }}
           </v-btn>
         </v-layout>
       </div>
@@ -24,18 +30,22 @@
       <div class="scrollable">
         <v-container fluid grid-list-md>
           <div class="padequaldiv">
-            <h2 class="ml-1 pt-3 pb-3 white--text headline font-weight-light">Microstartups</h2>
+            <h2 class="ml-1 pt-3 pb-3 white--text headline font-weight-light">
+              Microstartups
+            </h2>
             <v-layout pb-3 row wrap>
-              <v-flex x12 sm6 md6 v-for="project in this.$store.state.projects" :key="project.title">
+              <v-flex v-for="project in this.$store.state.projects" :key="project.title" x12 sm6 md6>
                 <v-card class="ma-1" hover>
-                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-1"/>
+                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-1" />
                   <v-card-title primary-title class="halfway">
-                    <h2 class="headline">{{ project.title }}</h2>
-                    <v-btn absolute dark fab top right 
-                    color="secondary"
-                    :title="project.tag"
-                    target="_blank"
-                    :href="project.url">
+                    <h2 class="headline">
+                      {{ project.title }}
+                    </h2>
+                    <v-btn absolute dark fab top right
+                           color="secondary"
+                           :title="project.tag"
+                           target="_blank"
+                           :href="project.url">
                       <v-icon>open_in_new</v-icon>
                     </v-btn>
                   </v-card-title>
@@ -45,18 +55,22 @@
                 </v-card>
               </v-flex>
             </v-layout>
-            <h2 class="ml-1 pb-3 white--text headline font-weight-light">Opensource</h2>
+            <h2 class="ml-1 pb-3 white--text headline font-weight-light">
+              Opensource
+            </h2>
             <v-layout pb-2 row wrap>
-              <v-flex x12 sm6 md6 v-for="project in this.$store.state.opensource" :key="project.title">
+              <v-flex v-for="project in this.$store.state.opensource" :key="project.title" x12 sm6 md6>
                 <v-card class="ma-1" hover>
-                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-4"/>
+                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-4" />
                   <v-card-title primary-title class="halfway">
-                    <h2 class="headline">{{ project.title }}</h2>
-                    <v-btn absolute dark fab top right 
-                    color="secondary"
-                    :title="project.tag"
-                    target="_blank"
-                    :href="project.url">
+                    <h2 class="headline">
+                      {{ project.title }}
+                    </h2>
+                    <v-btn absolute dark fab top right
+                           color="secondary"
+                           :title="project.tag"
+                           target="_blank"
+                           :href="project.url">
                       <v-icon>open_in_new</v-icon>
                     </v-btn>
                   </v-card-title>
@@ -74,8 +88,8 @@
 </template>
 
 <script>
-  export default {
-    layout: 'home'
-  }
+export default {
+  layout: 'home'
+}
 
 </script>
