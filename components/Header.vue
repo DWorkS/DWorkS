@@ -83,33 +83,33 @@ export default {
     shareText: 'I found this very useful website to get live coding help from expert developers'
   }),
   computed: {
-    toolbarColor: function () {
+    toolbarColor () {
       return this.colored ? 'primary' : 'transparent'
     },
-    shareTitle: function () {
+    shareTitle () {
       return this.$store.state.appName
     },
-    isUserLoggedIn: function () {
+    isUserLoggedIn () {
       return this.$store.state.user && this.$store.state.user.email
     },
-    userName: function () {
+    userName () {
       if (this.isUserLoggedIn) {
         return this.$store.state.user.name
       }
       return 'Hello! Developer'
     },
-    userAvatar: function () {
+    userAvatar () {
       return this.$store.state.user.photo
     },
     darkTheme: {
-      get: function () {
+      get () {
         return this.$store.state.darkTheme
       },
-      set: function (value) {
+      set (value) {
         this.$store.commit('SET_DARK_THEME', value)
       }
     },
-    showHamburger: function () {
+    showHamburger () {
       return ['/', '/about', '/contact'].includes(this.$route.path)
     }
   },
@@ -125,7 +125,7 @@ export default {
         navigator.share({
           title: this.shareTitle,
           text: this.shareText,
-          url: url
+          url
         })
       } else {
         this.sheet = true

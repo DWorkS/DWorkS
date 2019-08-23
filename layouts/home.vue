@@ -42,7 +42,7 @@ export default {
     }
   },
   computed: {
-    toolbarColor: function () {
+    toolbarColor () {
       return this.colored ? 'primary' : 'transparent'
     }
   },

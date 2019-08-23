@@ -36,10 +36,10 @@ export default {
     }
   },
   computed: {
-    toolbarTile: function () {
+    toolbarTile () {
       return this.$store.state.currentTitle || this.$store.state.appName
     },
-    toolbarColor: function () {
+    toolbarColor () {
       return this.colored ? 'primary' : 'transparent'
     }
   },
