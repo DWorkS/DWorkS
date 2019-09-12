@@ -1,5 +1,10 @@
 <template>
-  <a class="my-2 v-list__tile v-list__tile--link" :title="title" target="_blank" @click="openLinks(id)">
+  <a
+    class="my-2 v-list__tile v-list__tile--link"
+    :title="title"
+    target="_blank"
+    @click="openLinks(id)"
+  >
     <div v-if="image" class="v-list__tile__avatar">
       <v-avatar size="35">
         <img :src="image">
@@ -17,24 +22,26 @@ export default {
   name: 'ListItem',
   props: ['icon', 'image', 'title', 'id'],
   methods: {
-    openLinks (id) {
+    openLinks(id) {
       switch (id) {
-        case 'Email' :
+        case 'Email':
           const email = 'support@dworks.io'
           const subject = 'DWorkS Feedback'
           document.location = 'mailto:' + email + '?subject=' + subject
           break
-        case 'Dworks' :
+        case 'Dworks':
           window.open('https://dworks.io/', '_blank').focus()
           break
-        case 'Facebook' :
+        case 'Facebook':
           window.open('https://www.facebook.com/1DWorkS', '_blank').focus()
           break
-        case 'Twitter' :
+        case 'Twitter':
           window.open('https://twitter.com/1hakr', '_blank').focus()
           break
-        case 'Google+' :
-          window.open('https://plus.google.com/+HariKrishnaDulipudi', '_blank').focus()
+        case 'Google+':
+          window
+            .open('https://plus.google.com/+HariKrishnaDulipudi', '_blank')
+            .focus()
           break
       }
     }

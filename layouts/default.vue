@@ -10,10 +10,17 @@
     </span>
     <div itemscope itemtype="http://schema.org/WebSite">
       <meta itemprop="name" content="Dev Mentor">
-      <meta itemprop="alternateName" content="Get help from developer experts across the world">
+      <meta
+        itemprop="alternateName"
+        content="Get help from developer experts across the world"
+      >
       <meta itemprop="url" content="https://devmento.co/">
     </div>
-    <Header :colored="true" :items="this.$store.state.headerItems" :title="toolbarTile" />
+    <Header
+      :colored="true"
+      :items="this.$store.state.headerItems"
+      :title="toolbarTile"
+    />
     <v-content>
       <nuxt />
     </v-content>
@@ -36,35 +43,37 @@ export default {
     }
   },
   computed: {
-    toolbarTile () {
+    toolbarTile() {
       return this.$store.state.currentTitle || this.$store.state.appName
     },
-    toolbarColor () {
+    toolbarColor() {
       return this.colored ? 'primary' : 'transparent'
     }
   },
   methods: {
-    getFullUrl (path) {
-      const host = process.server ? this.$store.state.appDomain : window.location.host
+    getFullUrl(path) {
+      const host = process.server
+        ? this.$store.state.appDomain
+        : window.location.host
       const barehost = host.replace('www.', '')
       return `https://${barehost}${path}`
     }
   },
-  head () {
+  head() {
     const head = {
       title: 'Get one on one live coding help from experts',
       meta: [
-        { hid: 'description', name: 'description', content: 'Devmentor is the largest community for developer mentorship and an on-demand marketplace for software developers. Get instant coding help, build projects faster from our community of developers.' }
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            'Devmentor is the largest community for developer mentorship and an on-demand marketplace for software developers. Get instant coding help, build projects faster from our community of developers.'
+        }
       ],
-      link: [
-        { rel: 'canonical', href: this.getFullUrl(this.$route.path) }
-      ],
-      script: [
-        { src: '/pwacompat.js', async: true }
-      ]
+      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
+      script: [{ src: '/pwacompat.js', async: true }]
     }
     return head
   }
 }
-
 </script>

@@ -1,10 +1,21 @@
 <template>
   <div>
     <v-navigation-drawer v-model="drawer" temporary app class="nav-drawer">
-      <v-card color="primary white--text" flat tile class="flex inset-padding-top inset-padding-left">
+      <v-card
+        color="primary white--text"
+        flat
+        tile
+        class="flex inset-padding-top inset-padding-left"
+      >
         <v-container>
           <span>
-            <v-btn v-if="!isUserLoggedIn" fab light small @click.native.stop="dialog = true">
+            <v-btn
+              v-if="!isUserLoggedIn"
+              fab
+              light
+              small
+              @click.native.stop="dialog = true"
+            >
               <v-icon x-large color="primary darken-2">face</v-icon>
             </v-btn>
             <v-avatar v-else>
@@ -18,11 +29,14 @@
       </v-card>
       <v-list class="inset-padding-left">
         <template v-for="(item, i) in items">
-          <v-divider
-            v-if="item.divider"
+          <v-divider v-if="item.divider" :key="i" class="my-2" />
+          <v-list-tile
+            v-else
             :key="i"
-            class="my-2" />
-          <v-list-tile v-else :key="i" :to="item.to" :title="item.text" @click="drawer = !drawer">
+            :to="item.to"
+            :title="item.text"
+            @click="drawer = !drawer"
+          >
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -34,10 +48,28 @@
           </v-list-tile>
         </template>
       </v-list>
-      <v-switch v-if="false" v-model="darkTheme" class="pl-3" pl-3 :label="`${darkTheme ? `Dark` : ` Light `} Theme`" />
+      <v-switch
+        v-if="false"
+        v-model="darkTheme"
+        class="pl-3"
+        pl-3
+        :label="`${darkTheme ? `Dark` : ` Light `} Theme`"
+      />
     </v-navigation-drawer>
-    <v-toolbar :color="toolbarColor" dark app fixed :height="!colored ? 64 : 0" :flat="!colored" class="toolbar-index">
-      <v-toolbar-side-icon v-if="showHamburger" aria-label="drawer menu" @click.stop="drawer = !drawer" />
+    <v-toolbar
+      :color="toolbarColor"
+      dark
+      app
+      fixed
+      :height="!colored ? 64 : 0"
+      :flat="!colored"
+      class="toolbar-index"
+    >
+      <v-toolbar-side-icon
+        v-if="showHamburger"
+        aria-label="drawer menu"
+        @click.stop="drawer = !drawer"
+      />
       <v-btn v-else icon @click.stop="handleBack()">
         <v-icon>arrow_back</v-icon>
       </v-btn>
@@ -80,46 +112,49 @@ export default {
     drawer: false,
     sheet: false,
     home: '/',
-    shareText: 'I found this very useful website to get live coding help from expert developers'
+    shareText:
+      'I found this very useful website to get live coding help from expert developers'
   }),
   computed: {
-    toolbarColor () {
+    toolbarColor() {
       return this.colored ? 'primary' : 'transparent'
     },
-    shareTitle () {
+    shareTitle() {
       return this.$store.state.appName
     },
-    isUserLoggedIn () {
+    isUserLoggedIn() {
       return this.$store.state.user && this.$store.state.user.email
     },
-    userName () {
+    userName() {
       if (this.isUserLoggedIn) {
         return this.$store.state.user.name
       }
       return 'Hello! Developer'
     },
-    userAvatar () {
+    userAvatar() {
       return this.$store.state.user.photo
     },
     darkTheme: {
-      get () {
+      get() {
         return this.$store.state.darkTheme
       },
-      set (value) {
+      set(value) {
         this.$store.commit('SET_DARK_THEME', value)
       }
     },
-    showHamburger () {
+    showHamburger() {
       return ['/', '/about', '/contact'].includes(this.$route.path)
     }
   },
   methods: {
-    getFullUrl (path) {
-      const host = process.server ? this.$store.state.appDomain : window.location.host // this.$ssrContext.req.headers.host
+    getFullUrl(path) {
+      const host = process.server
+        ? this.$store.state.appDomain
+        : window.location.host // this.$ssrContext.req.headers.host
       const barehost = host.replace('www.', '').replace('amp.', '')
       return `https://${barehost}${path}`
     },
-    share () {
+    share() {
       if (navigator.share) {
         const url = this.getFullUrl(this.$route.path)
         navigator.share({
@@ -131,18 +166,19 @@ export default {
         this.sheet = true
       }
     },
-    shareUrl (social) {
+    shareUrl(social) {
       this.sheet = false
       const url = this.getFullUrl(this.$route.path)
 
       let shareUrl
       switch (social) {
-        case 'Facebook' :
+        case 'Facebook':
           shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url
           break
 
         case 'Twitter':
-          shareUrl = 'http://twitter.com/share?text=' + this.shareText + '&url=' + url
+          shareUrl =
+            'http://twitter.com/share?text=' + this.shareText + '&url=' + url
           break
 
         case 'Google+':
@@ -150,13 +186,18 @@ export default {
           break
 
         case 'LinkedIn':
-          shareUrl = 'https://www.linkedin.com/shareArticle?mini=true&title=' +
-          this.shareTitle + '&summary=' + this.shareText + '&url=' + url
+          shareUrl =
+            'https://www.linkedin.com/shareArticle?mini=true&title=' +
+            this.shareTitle +
+            '&summary=' +
+            this.shareText +
+            '&url=' +
+            url
           break
       }
       window.open(shareUrl, 'sharer', 'width=626,height=436')
     },
-    handleNavigation (item) {
+    handleNavigation(item) {
       switch (item.icon) {
         default:
           if (item.to) {
@@ -164,7 +205,7 @@ export default {
           }
       }
     },
-    handleBack () {
+    handleBack() {
       if (window.history.length > 1) {
         this.$router.back()
       } else {

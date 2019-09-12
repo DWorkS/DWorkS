@@ -12,28 +12,42 @@
             </a>
             <div class="pa-3">
               <h4 class="mt-2 body-3 text-xs-start">
-                We’re happy to answer any questions you may have, just send us a message on mail.
+                We’re happy to answer any questions you may have, just send us a
+                message on mail.
               </h4>
               <h4 class="mt-2 body-1 text-xs-start">
-                We can be reached at <b><a class="main-link" href="mailto:support@dworks.io" title="Support Email">support@dworks.io</a> </b>
-                Please preface your email subject line with any one of the following categories below, surrounded by brackets.
+                We can be reached at
+                <b
+                ><a
+                  class="main-link"
+                  href="mailto:support@dworks.io"
+                  title="Support Email"
+                >support@dworks.io</a
+                >
+                </b>
+                Please preface your email subject line with any one of the
+                following categories below, surrounded by brackets.
               </h4>
               <br>
               <b>Advertising/Sponsorship Inquiries</b>
               <h5 class="body-1 text-xs-start">
-                Use this category if you wish to discuss financial partnerships including but not limited to the advertising and sponsorship space.
+                Use this category if you wish to discuss financial partnerships
+                including but not limited to the advertising and sponsorship
+                space.
               </h5>
 
               <br>
               <b>Bug Reports</b>
               <h5 class="body-1 text-xs-start">
-                Use this category if you want to report an error that you noticed in the functionality of this website.
+                Use this category if you want to report an error that you
+                noticed in the functionality of this website.
               </h5>
 
               <br>
               <b>General</b>
               <h5 class="body-1 text-xs-start">
-                Use this category for all other inquiries or if you just want to say hi.
+                Use this category for all other inquiries or if you just want to
+                say hi.
               </h5>
             </div>
           </div>
@@ -46,20 +60,25 @@
 <script>
 export default {
   name: 'Contact',
-  data () {
+  data() {
     return {
       sheet: false
     }
   },
-  asyncData ({ store }) {
+  asyncData({ store }) {
     store.commit('SET_CURRENT_TITLE', `Contact Us`)
   },
-  head () {
+  head() {
     return {
       title: `Contact Us`,
       titleTemplate: '%s - DWorkS',
       meta: [
-        { name: 'description', hid: 'description', content: 'We’re happy to answer any questions you may have, just send us a message on mail or twitter' }
+        {
+          name: 'description',
+          hid: 'description',
+          content:
+            'We’re happy to answer any questions you may have, just send us a message on mail or twitter'
+        }
       ]
     }
   }

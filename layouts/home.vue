@@ -10,15 +10,26 @@
     </span>
     <div itemscope itemtype="http://schema.org/WebSite">
       <meta itemprop="name" content="DWorKS">
-      <meta itemprop="alternateName" content="Get help from developer experts across the world">
+      <meta
+        itemprop="alternateName"
+        content="Get help from developer experts across the world"
+      >
       <meta itemprop="url" content="https://dworks.co/">
     </div>
     <v-content>
       <nuxt />
     </v-content>
-    <v-snackbar v-model="snackbar" :timeout="0" color="#ffffff" :top="true" :multi-line="true" class="black--text">
+    <v-snackbar
+      v-model="snackbar"
+      :timeout="0"
+      color="#ffffff"
+      :top="true"
+      :multi-line="true"
+      class="black--text"
+    >
       <span>
-        🏆😻 <b>VisaList</b> is Nominated at Golden Kitty Awards 2018 for Side Project!
+        🏆😻 <b>VisaList</b> is Nominated at Golden Kitty Awards 2018 for Side
+        Project!
       </span>
       <v-btn color="#DA552F" @click="openProductHunt()">
         &nbsp;&nbsp;&nbsp;Vote now&nbsp;&nbsp;&nbsp;
@@ -36,17 +47,15 @@ export default {
       snackbar: false,
       colored: false,
       dialog: false,
-      menuItems: [
-        { title: 'Login', path: 'login', icon: 'code' }
-      ]
+      menuItems: [{ title: 'Login', path: 'login', icon: 'code' }]
     }
   },
   computed: {
-    toolbarColor () {
+    toolbarColor() {
       return this.colored ? 'primary' : 'transparent'
     }
   },
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       this.snackbar = false
     })
@@ -54,7 +63,7 @@ export default {
   methods: {
     onNavigation(section) {
       switch (section) {
-        case 'login' :
+        case 'login':
           this.dialog = true
           break
         default:
@@ -62,22 +71,30 @@ export default {
           break
       }
     },
-    onScroll (e) {
+    onScroll(e) {
       this.colored = window.scrollY > 100
     },
-    getFullUrl (path) {
-      const host = process.server ? this.$store.state.appDomain : window.location.host
+    getFullUrl(path) {
+      const host = process.server
+        ? this.$store.state.appDomain
+        : window.location.host
       const barehost = host.replace('www.', '')
       return `https://${barehost}${path}`
     },
     openProductHunt() {
       this.snackbar = false
-      window.open('https://www.producthunt.com/golden-kitty-awards-2018#side-project', '_blank').focus()
+      window
+        .open(
+          'https://www.producthunt.com/golden-kitty-awards-2018#side-project',
+          '_blank'
+        )
+        .focus()
     }
   },
-  head () {
+  head() {
     const formattedTitle = `DWorkS - Microstartup and Opensource apps`
-    const description = 'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
+    const description =
+      'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
     const head = {
       title: formattedTitle,
       titleTemplate: null,
@@ -86,22 +103,30 @@ export default {
         { property: 'og:title', hid: 'og:title', content: formattedTitle },
         { property: 'og:site_name', hid: 'og:site_name', content: 'DWorKS' },
         { property: 'og:url', content: this.getFullUrl(this.$route.path) },
-        { property: 'og:image', content: this.getFullUrl('/feature_graphic.jpg') },
-        { property: 'og:description', hid: 'og:description', content: description },
+        {
+          property: 'og:image',
+          content: this.getFullUrl('/feature_graphic.jpg')
+        },
+        {
+          property: 'og:description',
+          hid: 'og:description',
+          content: description
+        },
         { property: 'twitter:title', content: formattedTitle },
-        { property: 'twitter:site', content: this.getFullUrl(this.$route.path) },
-        { property: 'twitter:image', content: this.getFullUrl('/feature_graphic.jpg') },
+        {
+          property: 'twitter:site',
+          content: this.getFullUrl(this.$route.path)
+        },
+        {
+          property: 'twitter:image',
+          content: this.getFullUrl('/feature_graphic.jpg')
+        },
         { property: 'twitter:description', content: description }
       ],
-      link: [
-        { rel: 'canonical', href: this.getFullUrl(this.$route.path) }
-      ],
-      script: [
-        { src: '/pwacompat.js', async: true }
-      ]
+      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
+      script: [{ src: '/pwacompat.js', async: true }]
     }
     return head
   }
 }
-
 </script>
