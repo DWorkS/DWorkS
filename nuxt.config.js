@@ -52,15 +52,12 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
     ['@nuxtjs/google-analytics', {
       id: process.env.ANALYTICS_ID,
       debug: { sendHitTask: process.env.ANALYTICS_ENABLED }
-    }],
-    '@nuxtjs/sentry',
-    '@nuxtjs/redirect-module'
+    }]
   ],
   /*
   ** Axios module configuration
