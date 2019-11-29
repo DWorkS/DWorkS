@@ -13,17 +13,8 @@
           difference
         </h1>
         <v-layout mt-5 justify-center row wrap>
-          <v-btn
-            v-for="item in this.$store.state.contactItems"
-            :key="item.title"
-            color="white"
-            pa-0
-            :title="item.title"
-            :target="item.to.startsWith('https') ? `_blank` : ``"
-            flat
-            round
-            :href="item.to"
-          >
+          <v-btn v-for="item in this.$store.state.contactItems" :key="item.title" color="white" pa-0 :title="item.title"
+                 :target="item.to.startsWith('https') ? `_blank` : ``" flat round :href="item.to">
             <v-icon left dark>
               {{ item.icon }}
             </v-icon>
@@ -40,34 +31,15 @@
               Microstartups
             </h2>
             <v-layout pb-3 row wrap>
-              <v-flex
-                v-for="project in this.$store.state.projects"
-                :key="project.title"
-                x12
-                sm6
-                md6
-              >
+              <v-flex v-for="project in this.$store.state.projects" :key="project.title" x12 sm6 md6>
                 <v-card class="ma-1" hover>
-                  <v-img
-                    :src="project.imgUrl"
-                    aspect-ratio="2"
-                    class="grey lighten-1"
-                  />
+                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-1" />
                   <v-card-title primary-title class="halfway">
                     <h2 class="headline">
                       {{ project.title }}
                     </h2>
-                    <v-btn
-                      absolute
-                      dark
-                      fab
-                      top
-                      right
-                      color="secondary"
-                      :title="project.tag"
-                      target="_blank"
-                      :href="project.url"
-                    >
+                    <v-btn absolute dark fab top right color="secondary" :title="project.tag" target="_blank"
+                           :href="project.url">
                       <v-icon>open_in_new</v-icon>
                     </v-btn>
                   </v-card-title>
@@ -81,34 +53,15 @@
               Opensource
             </h2>
             <v-layout pb-2 row wrap>
-              <v-flex
-                v-for="project in this.$store.state.opensource"
-                :key="project.title"
-                x12
-                sm6
-                md6
-              >
+              <v-flex v-for="project in this.$store.state.opensource" :key="project.title" x12 sm6 md6>
                 <v-card class="ma-1" hover>
-                  <v-img
-                    :src="project.imgUrl"
-                    aspect-ratio="2"
-                    class="grey lighten-4"
-                  />
+                  <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-4" />
                   <v-card-title primary-title class="halfway">
                     <h2 class="headline">
                       {{ project.title }}
                     </h2>
-                    <v-btn
-                      absolute
-                      dark
-                      fab
-                      top
-                      right
-                      color="secondary"
-                      :title="project.tag"
-                      target="_blank"
-                      :href="project.url"
-                    >
+                    <v-btn absolute dark fab top right color="secondary" :title="project.tag" target="_blank"
+                           :href="project.url">
                       <v-icon>open_in_new</v-icon>
                     </v-btn>
                   </v-card-title>
@@ -129,4 +82,5 @@
 export default {
   layout: 'home'
 }
+
 </script>

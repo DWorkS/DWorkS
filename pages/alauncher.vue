@@ -19,9 +19,7 @@
                   <b>Installation instructions</b><br>
                   1. Go to this
                   <a class="blue--text"
-                     href="https://raw.githubusercontent.com/1hakr/ALauncher/master/companion-bridge-debug.apk"
-                  >LINK</a
-                  ><br>
+                     href="https://raw.githubusercontent.com/1hakr/ALauncher/master/companion-bridge-debug.apk">LINK</a><br>
                   2. Under assets, click on "companion-bridge-debug.apk"<br>
                   3. Let your phone download the file<br>
                   4. Install the file as an application<br>
@@ -85,22 +83,22 @@ export default {
       sheet: false
     }
   },
-  asyncData({ store }) {
+  asyncData({
+    store
+  }) {
     store.commit('SET_CURRENT_TITLE', `ALauncher Bridge`)
   },
   head() {
     return {
       title: `ALauncher Bridge`,
       titleTemplate: '%s - DWorkS',
-      meta: [
-        {
-          name: 'description',
-          hid: 'description',
-          content:
-            'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
-        }
-      ]
+      meta: [{
+        name: 'description',
+        hid: 'description',
+        content: 'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
+      }]
     }
   }
 }
+
 </script>

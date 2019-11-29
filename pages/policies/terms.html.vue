@@ -128,22 +128,22 @@ export default {
       sheet: false
     }
   },
-  asyncData({ store }) {
+  asyncData({
+    store
+  }) {
     store.commit('SET_CURRENT_TITLE', `Terms`)
   },
   head() {
     return {
       title: `Terms`,
       titleTemplate: '%s - DWorkS',
-      meta: [
-        {
-          name: 'description',
-          hid: 'description',
-          content:
-            'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
-        }
-      ]
+      meta: [{
+        name: 'description',
+        hid: 'description',
+        content: 'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
+      }]
     }
   }
 }
+
 </script>

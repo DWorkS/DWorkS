@@ -17,13 +17,7 @@
               </h4>
               <h4 class="mt-2 body-1 text-xs-start">
                 We can be reached at
-                <b
-                ><a
-                  class="main-link"
-                  href="mailto:support@dworks.io"
-                  title="Support Email"
-                >support@dworks.io</a
-                >
+                <b><a class="main-link" href="mailto:support@dworks.io" title="Support Email">support@dworks.io</a>
                 </b>
                 Please preface your email subject line with any one of the
                 following categories below, surrounded by brackets.
@@ -65,22 +59,22 @@ export default {
       sheet: false
     }
   },
-  asyncData({ store }) {
+  asyncData({
+    store
+  }) {
     store.commit('SET_CURRENT_TITLE', `Contact Us`)
   },
   head() {
     return {
       title: `Contact Us`,
       titleTemplate: '%s - DWorkS',
-      meta: [
-        {
-          name: 'description',
-          hid: 'description',
-          content:
-            'We’re happy to answer any questions you may have, just send us a message on mail or twitter'
-        }
-      ]
+      meta: [{
+        name: 'description',
+        hid: 'description',
+        content: 'We’re happy to answer any questions you may have, just send us a message on mail or twitter'
+      }]
     }
   }
 }
+
 </script>

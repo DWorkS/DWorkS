@@ -25,24 +25,15 @@
       <v-flex d-flex xs12 sm8 md6>
         <v-card class="pa-3">
           <div class="mb-3 text-xs-center">
-            <v-btn
-              large
-              fab
-              flat
-              light
-              href="https://twitter.com/1HaKr"
-              title="1HaKr twitter profile"
-              target="_blank"
-            >
+            <v-btn large fab flat light href="https://twitter.com/1HaKr" title="1HaKr twitter profile" target="_blank">
               <v-avatar size="70">
                 <img src="/photo.jpg" alt="Hari Krishna">
               </v-avatar>
             </v-btn>
           </div>
-          <span
-          >My name is <strong>Hari</strong>. I made
-            <strong>{{ this.$store.state.appName }}</strong
-            >. We made this because we think a product like this needs to exist.
+          <span>My name is <strong>Hari</strong>. I made
+            <strong>{{ this.$store.state.appName }}</strong>. We made this because we think a product like this needs to
+            exist.
           </span>
           <h4 class="mt-4 title text-xs-center">
             Made with ❤️
@@ -52,31 +43,11 @@
       <v-flex d-flex xs12 sm8 md6>
         <v-card class="pa-3">
           <div class="v-list">
-            <list-item
-              id="Dworks"
-              image="/dworks.png"
-              title="Built by DWorkS organisation"
-            />
-            <list-item
-              id="Email"
-              icon="email"
-              title="Feed us back and give suggestions"
-            />
-            <list-item
-              id="Twitter"
-              image="/twitter.svg"
-              title="Follow us on Twitter"
-            />
-            <list-item
-              id="Facebook"
-              image="/facebook.svg"
-              title="Follow us on Facebook"
-            />
-            <list-item
-              id="Google+"
-              image="/gplus.svg"
-              title="Follow us on Google+"
-            />
+            <list-item id="Dworks" image="/dworks.png" title="Built by DWorkS organisation" />
+            <list-item id="Email" icon="email" title="Feed us back and give suggestions" />
+            <list-item id="Twitter" image="/twitter.svg" title="Follow us on Twitter" />
+            <list-item id="Facebook" image="/facebook.svg" title="Follow us on Facebook" />
+            <list-item id="Google+" image="/gplus.svg" title="Follow us on Google+" />
           </div>
         </v-card>
       </v-flex>
@@ -110,22 +81,22 @@ export default {
       sheet: false
     }
   },
-  asyncData({ store }) {
+  asyncData({
+    store
+  }) {
     store.commit('SET_CURRENT_TITLE', `About Us`)
   },
   head() {
     return {
       title: `About Us`,
       titleTemplate: '%s - DWorkS',
-      meta: [
-        {
-          name: 'description',
-          hid: 'description',
-          content:
-            'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
-        }
-      ]
+      meta: [{
+        name: 'description',
+        hid: 'description',
+        content: 'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
+      }]
     }
   }
 }
+
 </script>

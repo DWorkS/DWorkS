@@ -46,25 +46,13 @@
               </p>
               <ul>
                 <li>
-                  <a
-                    href="https://www.google.com/policies/privacy/"
-                    target="_blank"
-                  >Google Play Services</a
-                  >
+                  <a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a>
                 </li>
                 <li>
-                  <a
-                    href="https://support.google.com/admob/answer/6128543?hl=en"
-                    target="_blank"
-                  >AdMob</a
-                  >
+                  <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a>
                 </li>
                 <li>
-                  <a
-                    href="https://firebase.google.com/policies/analytics"
-                    target="_blank"
-                  >Firebase Analytics</a
-                  >
+                  <a href="https://firebase.google.com/policies/analytics" target="_blank">Firebase Analytics</a>
                 </li>
                 <!---->
               </ul>
@@ -168,22 +156,22 @@ export default {
       sheet: false
     }
   },
-  asyncData({ store }) {
+  asyncData({
+    store
+  }) {
     store.commit('SET_CURRENT_TITLE', `Privacy Policy`)
   },
   head() {
     return {
       title: `Privacy Policy`,
       titleTemplate: '%s - DWorkS',
-      meta: [
-        {
-          name: 'description',
-          hid: 'description',
-          content:
-            'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
-        }
-      ]
+      meta: [{
+        name: 'description',
+        hid: 'description',
+        content: 'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
+      }]
     }
   }
 }
+
 </script>
