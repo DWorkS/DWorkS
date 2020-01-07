@@ -92,7 +92,7 @@ export default {
     }
   },
   head() {
-    const formattedTitle = `DWorkS - Microstartup and Opensource apps`
+    const formattedTitle = 'DWorkS - Microstartup and Opensource apps'
     const description =
       'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
     const head = {

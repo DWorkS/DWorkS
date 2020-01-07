@@ -78,19 +78,19 @@
 <script>
 export default {
   name: 'ALauncher',
+  asyncData({
+    store
+  }) {
+    store.commit('SET_CURRENT_TITLE', 'ALauncher Bridge')
+  },
   data() {
     return {
       sheet: false
     }
   },
-  asyncData({
-    store
-  }) {
-    store.commit('SET_CURRENT_TITLE', `ALauncher Bridge`)
-  },
   head() {
     return {
-      title: `ALauncher Bridge`,
+      title: 'ALauncher Bridge',
       titleTemplate: '%s - DWorkS',
       meta: [{
         name: 'description',

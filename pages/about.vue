@@ -24,8 +24,8 @@
       </v-flex>
       <v-flex d-flex xs12 sm8 md6>
         <v-card class="pa-3">
-          <div class="mb-3 text-xs-center">
-            <v-btn large fab flat light href="https://twitter.com/1HaKr" title="1HaKr twitter profile" target="_blank">
+          <div class="mb-3 text-center">
+            <v-btn large fab text light href="https://twitter.com/1HaKr" title="1HaKr twitter profile" target="_blank">
               <v-avatar size="70">
                 <img src="/photo.jpg" alt="Hari Krishna">
               </v-avatar>
@@ -35,7 +35,7 @@
             <strong>{{ this.$store.state.appName }}</strong>. We made this because we think a product like this needs to
             exist.
           </span>
-          <h4 class="mt-4 title text-xs-center">
+          <h4 class="mt-4 title text-center">
             Made with ❤️
           </h4>
         </v-card>
@@ -76,19 +76,19 @@ export default {
   components: {
     ListItem
   },
+  asyncData({
+    store
+  }) {
+    store.commit('SET_CURRENT_TITLE', 'About Us')
+  },
   data() {
     return {
       sheet: false
     }
   },
-  asyncData({
-    store
-  }) {
-    store.commit('SET_CURRENT_TITLE', `About Us`)
-  },
   head() {
     return {
-      title: `About Us`,
+      title: 'About Us',
       titleTemplate: '%s - DWorkS',
       meta: [{
         name: 'description',

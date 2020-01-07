@@ -60,15 +60,13 @@ export default {
     }
   },
   head() {
+    const formattedTitle = 'DWorkS - Microstartup and Opensource apps'
+    const description =
+      'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
     const head = {
-      title: 'Get one on one live coding help from experts',
+      title: formattedTitle,
       meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content:
-            'Devmentor is the largest community for developer mentorship and an on-demand marketplace for software developers. Get instant coding help, build projects faster from our community of developers.'
-        }
+        { hid: 'description', name: 'description', content: description }
       ],
       link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
       script: [{ src: '/pwacompat.js', async: true }]

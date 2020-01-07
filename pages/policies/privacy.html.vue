@@ -151,19 +151,19 @@
 <script>
 export default {
   name: 'About',
+  asyncData({
+    store
+  }) {
+    store.commit('SET_CURRENT_TITLE', 'Privacy Policy')
+  },
   data() {
     return {
       sheet: false
     }
   },
-  asyncData({
-    store
-  }) {
-    store.commit('SET_CURRENT_TITLE', `Privacy Policy`)
-  },
   head() {
     return {
-      title: `Privacy Policy`,
+      title: 'Privacy Policy',
       titleTemplate: '%s - DWorkS',
       meta: [{
         name: 'description',

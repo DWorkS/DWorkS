@@ -29,7 +29,8 @@ export const state = () => ({
     { img: 'gplus.svg', title: 'Google+' }
   ],
   projects: [
-    { title: 'Visa List',
+    {
+      title: 'Visa List',
       tag: 'visalist',
       content: 'Find all the countries you can visit on your passport and know the visa requirements',
       imgUrl: '/visalist-background.jpg',

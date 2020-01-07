@@ -1,21 +1,10 @@
 <template>
   <div>
     <v-navigation-drawer v-model="drawer" temporary app class="nav-drawer">
-      <v-card
-        color="primary white--text"
-        flat
-        tile
-        class="flex inset-padding-top inset-padding-left"
-      >
+      <v-card color="primary white--text" flat tile class="flex inset-padding-top inset-padding-left">
         <v-container>
           <span>
-            <v-btn
-              v-if="!isUserLoggedIn"
-              fab
-              light
-              small
-              @click.native.stop="dialog = true"
-            >
+            <v-btn v-if="!isUserLoggedIn" fab light small @click.native.stop="dialog = true">
               <v-icon x-large color="primary darken-2">face</v-icon>
             </v-btn>
             <v-avatar v-else>
@@ -30,13 +19,7 @@
       <v-list class="inset-padding-left">
         <template v-for="(item, i) in items">
           <v-divider v-if="item.divider" :key="i" class="my-2" />
-          <v-list-tile
-            v-else
-            :key="i"
-            :to="item.to"
-            :title="item.text"
-            @click="drawer = !drawer"
-          >
+          <v-list-tile v-else :key="i" :to="item.to" :title="item.text" @click="drawer = !drawer">
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -48,28 +31,10 @@
           </v-list-tile>
         </template>
       </v-list>
-      <v-switch
-        v-if="false"
-        v-model="darkTheme"
-        class="pl-3"
-        pl-3
-        :label="`${darkTheme ? `Dark` : ` Light `} Theme`"
-      />
+      <v-switch v-if="false" v-model="darkTheme" class="pl-3" pl-3 :label="`${darkTheme ? `Dark` : ` Light `} Theme`" />
     </v-navigation-drawer>
-    <v-toolbar
-      :color="toolbarColor"
-      dark
-      app
-      fixed
-      :height="!colored ? 64 : 0"
-      :flat="!colored"
-      class="toolbar-index"
-    >
-      <v-toolbar-side-icon
-        v-if="showHamburger"
-        aria-label="drawer menu"
-        @click.stop="drawer = !drawer"
-      />
+    <v-app-bar :color="toolbarColor" dark app fixed :height="!colored ? 64 : 0" :flat="!colored" class="toolbar-index">
+      <v-toolbar-side-icon v-if="showHamburger" aria-label="drawer menu" @click.stop="drawer = !drawer" />
       <v-btn v-else icon @click.stop="handleBack()">
         <v-icon>arrow_back</v-icon>
       </v-btn>
@@ -85,11 +50,7 @@
       <v-bottom-sheet v-model="sheet" class="bottom-index">
         <v-list>
           <v-subheader>Share</v-subheader>
-          <v-list-tile
-            v-for="tile in this.$store.state.shareItems"
-            :key="tile.title"
-            @click="shareUrl(tile.title)"
-          >
+          <v-list-tile v-for="tile in this.$store.state.shareItems" :key="tile.title" @click="shareUrl(tile.title)">
             <v-list-tile-avatar>
               <v-avatar size="32px" tile>
                 <img :src="`/${tile.img}`" :alt="tile.title">
@@ -99,7 +60,7 @@
           </v-list-tile>
         </v-list>
       </v-bottom-sheet>
-    </v-toolbar>
+    </v-app-bar>
   </div>
 </template>
 
@@ -112,8 +73,7 @@ export default {
     drawer: false,
     sheet: false,
     home: '/',
-    shareText:
-      'I found this very useful website to get live coding help from expert developers'
+    shareText: 'I found this very useful website to get live coding help from expert developers'
   }),
   computed: {
     toolbarColor() {
@@ -178,7 +138,7 @@ export default {
 
         case 'Twitter':
           shareUrl =
-            'http://twitter.com/share?text=' + this.shareText + '&url=' + url
+              'http://twitter.com/share?text=' + this.shareText + '&url=' + url
           break
 
         case 'Google+':
@@ -187,12 +147,12 @@ export default {
 
         case 'LinkedIn':
           shareUrl =
-            'https://www.linkedin.com/shareArticle?mini=true&title=' +
-            this.shareTitle +
-            '&summary=' +
-            this.shareText +
-            '&url=' +
-            url
+              'https://www.linkedin.com/shareArticle?mini=true&title=' +
+              this.shareTitle +
+              '&summary=' +
+              this.shareText +
+              '&url=' +
+              url
           break
       }
       window.open(shareUrl, 'sharer', 'width=626,height=436')
@@ -214,4 +174,5 @@ export default {
     }
   }
 }
+
 </script>

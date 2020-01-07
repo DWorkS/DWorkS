@@ -1,15 +1,9 @@
 require('dotenv').config()
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-const nodeExternals = require('webpack-node-externals')
 
 const themeColor = '#2C2C2C'
 const appName = 'DWorkS'
 
 module.exports = {
-  /*
-  ** Headers of the page
-  */
-
   head: {
     title: appName,
     titleTemplate: '%s - ' + appName,
@@ -26,48 +20,24 @@ module.exports = {
       { rel: 'shortcut icon', href: '/favicon.ico' }
     ]
   },
-
-  /*
-  ** Customize the progress-bar color
-  */
   loading: { color: '#FFFFFF' },
-
-  /*
-  ** Global CSS
-  */
   css: [
-    '~/assets/style/app.styl',
-    '@mdi/font/css/materialdesignicons.min.css'
+    '~/assets/style/app'
   ],
-
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    '@/plugins/vuetify'
-  ],
-
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/pwa',
-    '@nuxtjs/dotenv',
     ['@nuxtjs/google-analytics', {
       id: process.env.ANALYTICS_ID,
       debug: { sendHitTask: process.env.ANALYTICS_ENABLED }
     }]
   ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-  /*
-  ** Customize app manifest
-  */
+  buildModules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv',
+    'nuxt-webfontloader',
+    '@nuxtjs/vuetify',
+    'nuxt-purgecss'
+  ],
+  pwa: {
   manifest: {
     name: appName,
     short_name: appName,
@@ -81,6 +51,29 @@ module.exports = {
     nativeUI: true,
     mobileApp: false,
     mobileAppIOS: false
+  }
+},
+  vuetify: {
+    defaultAssets: false,
+    optionsPath: './vuetify.options.js'
+  },
+  webfontloader: {
+    custom: {
+      families: ['Material Design Icons'],
+      urls: ['https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/4.7.95/css/materialdesignicons.min.css']
+    }
+  },
+  purgeCSS: {
+    mode: 'postcss',
+    paths: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      './node_modules/vuetify/dist/vuetify.js'
+    ],
+    whitelist: ['html', 'body', 'nuxt-link-exact-active', 'nuxt-progress', 'wf-active', 'amzn'],
+    whitelistPatterns: [/^v\-/, /wf.*/, /nuxt.*/, /amzn.*/, /language*/, /token.*/]
   },
   // redirect: [
   //   { from: '^/policies/terms.html', to: '/policies/terms', statusCode: 301 },
@@ -88,7 +81,8 @@ module.exports = {
   // ],
   render: {
     http2: {
-      push: true
+      push: true,
+      pushAssets: (file, type) => type === 'script'
     },
     bundleRenderer: {
       shouldPreload: (file, type) => {
@@ -97,7 +91,7 @@ module.exports = {
     },
     static: {
       maxAge: '1y',
-      setHeaders (res, path) {
+      setHeaders(res, path) {
         if (path.includes('sw.js')) {
           res.setHeader('Cache-Control', `public, max-age=${15 * 60}`)
         }
@@ -107,24 +101,16 @@ module.exports = {
   generate: {
     dir: 'public'
   },
-  /*
-  ** Build configuration
-  */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
-    transpile: ['vuetify/lib'],
-    plugins: [
-      new VuetifyLoaderPlugin()
-    ],
-    extractCSS: true,
-    optimization: {
-      splitChunks: {
-        name: false
-      }
+    filenames: {
+      app: ({ isDev }) => isDev ? '[name].js' : '[name].[chunkhash].js',
+      chunk: ({ isDev }) => isDev ? '[name].js' : '[id].[chunkhash].js',
+      css: ({ isDev }) => isDev ? '[name].css' : '[id].[contenthash].css'
     },
-    extend (config, ctx) {
+    /*
+    ** Run ESLint on save
+    */
+    extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -135,13 +121,6 @@ module.exports = {
             fix: true
           }
         })
-      }
-      if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
       }
     }
   }

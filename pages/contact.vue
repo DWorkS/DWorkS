@@ -54,19 +54,19 @@
 <script>
 export default {
   name: 'Contact',
+  asyncData({
+    store
+  }) {
+    store.commit('SET_CURRENT_TITLE', 'Contact Us')
+  },
   data() {
     return {
       sheet: false
     }
   },
-  asyncData({
-    store
-  }) {
-    store.commit('SET_CURRENT_TITLE', `Contact Us`)
-  },
   head() {
     return {
-      title: `Contact Us`,
+      title: 'Contact Us',
       titleTemplate: '%s - DWorkS',
       meta: [{
         name: 'description',

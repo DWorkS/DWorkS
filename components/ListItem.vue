@@ -1,20 +1,20 @@
 <template>
-  <a
-    class="my-2 v-list__tile v-list__tile--link"
-    :title="title"
-    target="_blank"
-    @click="openLinks(id)"
-  >
-    <div v-if="image" class="v-list__tile__avatar">
-      <v-avatar size="35">
-        <img :src="image">
+  <v-list-item @click="openLinks(id)">
+    <v-list-item-icon>
+      <v-avatar v-if="image" size="35">
+        <simple-image v-if="layoutLoaded" :src="image" />
       </v-avatar>
-    </div>
-    <div v-else class="v-list__tile__avatar">
-      <v-icon>{{ icon }}</v-icon>
-    </div>
-    <v-list-tile-title>{{ title }}</v-list-tile-title>
-  </a>
+      <v-btn v-else-if="circle" text small class="ma-0 primary" fab dark>
+        <v-icon>{{ icon }}</v-icon>
+      </v-btn>
+      <v-icon v-else>
+        {{ icon }}
+      </v-icon>
+    </v-list-item-icon>
+    <v-list-item-content>
+      <v-list-item-title>{{ title }}</v-list-item-title>
+    </v-list-item-content>
+  </v-list-item>
 </template>
 
 <script>
@@ -25,9 +25,9 @@ export default {
     openLinks(id) {
       switch (id) {
         case 'Email':
-          const email = 'support@dworks.io'
-          const subject = 'DWorkS Feedback'
-          document.location = 'mailto:' + email + '?subject=' + subject
+          // const email = 'support@dworks.io'
+          // const subject = 'DWorkS Feedback'
+          // document.location = 'mailto:' + email + '?subject=' + subject
           break
         case 'Dworks':
           window.open('https://dworks.io/', '_blank').focus()
@@ -47,4 +47,5 @@ export default {
     }
   }
 }
+
 </script>
