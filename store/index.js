@@ -33,35 +33,35 @@ export const state = () => ({
       title: 'Visa List',
       tag: 'visalist',
       content: 'Find all the countries you can visit on your passport and know the visa requirements',
-      imgUrl: '/visalist-background.jpg',
+      imgUrl: '/projects/visalist-background.jpg',
       url: 'https://visalist.io?referrer=dworks'
     },
     {
       title: 'ACrypto',
       tag: 'acrypto',
       content: 'Simple cryptocurrency Price, Arbitrage, News, Alerts and Portfolio Tracker',
-      imgUrl: '/acrypto-background.jpg',
+      imgUrl: '/projects/acrypto-background.jpg',
       url: 'https://acrypto.io?referrer=dworks'
     },
     {
       title: 'AnExplorer',
       tag: 'anexplorer',
       content: 'Simple All-in-one file manager for phone, tablets, watches, chromebook and TV',
-      imgUrl: '/anexplorer-background.jpg',
+      imgUrl: '/projects/anexplorer-background.jpg',
       url: 'https://anexplorer.co?referrer=dworks'
     },
     {
       title: 'ALauncher',
       tag: 'alauncher',
       content: 'Simple launcher with app lock, google feed, themes for phones, tablets and TV',
-      imgUrl: '/alauncher-background.jpg',
+      imgUrl: '/projects/alauncher-background.jpg',
       url: 'https://play.google.com/store/apps/details?id=dev.dworks.apps.alauncher'
     },
     {
       title: 'AWatch',
       tag: 'awatch',
       content: 'Elegant watch face for wear os watches and screensaver for phones, tablets and TV',
-      imgUrl: '/awatch-background.jpg',
+      imgUrl: '/projects/awatch-background.jpg',
       url: 'https://play.google.com/store/apps/details?id=dev.dworks.apps.awatch'
     }
   ],
@@ -70,28 +70,28 @@ export const state = () => ({
       title: 'Volley Plus',
       tag: 'volleyplus',
       content: 'Android library with improvements to Volley along with full image caching.',
-      imgUrl: '/volleyplus-background.jpg',
+      imgUrl: '/projects/volleyplus-background.jpg',
       url: 'https://github.com/DWorkS/VolleyPlus'
     },
     {
       title: 'AWizard',
       tag: 'awizard',
       content: "Android library which can be used for creating wizards very easily. It's based of Roman Nurik's wizard pager.",
-      imgUrl: '/awizard-background.jpg',
+      imgUrl: '/projects/awizard-background.jpg',
       url: 'https://github.com/DWorkS/AWizard'
     },
     {
       title: 'AStickyHeader',
       tag: 'astickyheader',
       content: 'AStickyHeader is an android library for adding Sticky Headers to ListView or GridView. Usage is very simple, it supports all kinds of Adapters.',
-      imgUrl: '/astickyheader-background.jpg',
+      imgUrl: '/projects/astickyheader-background.jpg',
       url: 'https://github.com/DWorkS/AStickyHeader'
     },
     {
       title: 'ATaxer',
       tag: 'ataxer',
       content: 'Another Taxer android app helps you calculate tax with ease.',
-      imgUrl: '/ataxer-background.jpg',
+      imgUrl: '/projects/ataxer-background.jpg',
       url: 'https://github.com/1hakr/ATaxer'
     }
   ],

@@ -38,21 +38,21 @@ module.exports = {
     'nuxt-purgecss'
   ],
   pwa: {
-  manifest: {
-    name: appName,
-    short_name: appName,
-    description: 'Bulding microstartups and opensource projects to make a small difference in the world.',
-    author: 'Hari Krishna Dulipudi',
-    background_color: themeColor,
-    theme_color: themeColor,
-    scope: '/'
+    manifest: {
+      name: appName,
+      short_name: appName,
+      description: 'Bulding microstartups and opensource projects to make a small difference in the world.',
+      author: 'Hari Krishna Dulipudi',
+      background_color: themeColor,
+      theme_color: themeColor,
+      scope: '/'
+    },
+    meta: {
+      nativeUI: true,
+      mobileApp: false,
+      mobileAppIOS: false
+    }
   },
-  meta: {
-    nativeUI: true,
-    mobileApp: false,
-    mobileAppIOS: false
-  }
-},
   vuetify: {
     defaultAssets: false,
     optionsPath: './vuetify.options.js'
