@@ -16,27 +16,12 @@
           </h3>
         </v-container>
       </v-card>
-      <v-list class="inset-padding-left">
-        <template v-for="(item, i) in items">
-          <v-divider v-if="item.divider" :key="i" class="my-2" />
-          <v-list-tile v-else :key="i" :to="item.to" :title="item.text" @click="drawer = !drawer">
-            <v-list-tile-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>
-                {{ item.text }}
-              </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </template>
-      </v-list>
       <v-switch v-if="false" v-model="darkTheme" class="pl-3" pl-3 :label="`${darkTheme ? `Dark` : ` Light `} Theme`" />
     </v-navigation-drawer>
     <v-app-bar :color="toolbarColor" dark app fixed :height="!colored ? 64 : 0" :flat="!colored" class="toolbar-index">
       <v-toolbar-side-icon v-if="showHamburger" aria-label="drawer menu" @click.stop="drawer = !drawer" />
       <v-btn v-else icon @click.stop="handleBack()">
-        <v-icon>arrow_back</v-icon>
+        <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
       <v-toolbar-title v-show="title" class="ml-0">
         <h1 v-show="title" class="title">
@@ -45,19 +30,19 @@
       </v-toolbar-title>
       <v-spacer />
       <v-btn icon aria-label="share" @click="share()">
-        <v-icon>share</v-icon>
+        <v-icon>mdi-share-variant</v-icon>
       </v-btn>
       <v-bottom-sheet v-model="sheet" class="bottom-index">
         <v-list>
           <v-subheader>Share</v-subheader>
-          <v-list-tile v-for="tile in this.$store.state.shareItems" :key="tile.title" @click="shareUrl(tile.title)">
-            <v-list-tile-avatar>
+          <v-list-item v-for="tile in this.$store.state.shareItems" :key="tile.title" @click="shareUrl(tile.title)">
+            <v-list-item-avatar>
               <v-avatar size="32px" tile>
-                <img :src="`/${tile.img}`" :alt="tile.title">
+                <img :src="`${tile.img}`" :alt="tile.title">
               </v-avatar>
-            </v-list-tile-avatar>
-            <v-list-tile-title>{{ tile.title }}</v-list-tile-title>
-          </v-list-tile>
+            </v-list-item-avatar>
+            <v-list-item-title>{{ tile.title }}</v-list-item-title>
+          </v-list-item>
         </v-list>
       </v-bottom-sheet>
     </v-app-bar>

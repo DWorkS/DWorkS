@@ -22,7 +22,7 @@ module.exports = {
   },
   loading: { color: '#FFFFFF' },
   css: [
-    '~/assets/style/app'
+    '~/assets/app'
   ],
   modules: [
     ['@nuxtjs/google-analytics', {
@@ -55,7 +55,8 @@ module.exports = {
   },
   vuetify: {
     defaultAssets: false,
-    optionsPath: './vuetify.options.js'
+    optionsPath: './vuetify.options.js',
+    customVariables: ['~/assets/variables.scss']
   },
   webfontloader: {
     custom: {

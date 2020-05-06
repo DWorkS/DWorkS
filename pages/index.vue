@@ -15,10 +15,11 @@
           </h1>
           <v-layout mt-5 justify-center row wrap>
             <v-btn v-for="item in this.$store.state.contactItems" :key="item.title" color="white" pa-0 :title="item.title"
-                   :target="item.to.startsWith('https') ? `_blank` : ``" icon :href="item.to">
-              <v-icon>
+                   :target="item.to.startsWith('https') ? `_blank` : ``" rounded text :href="item.to">
+              <v-icon class="mr-2">
                 {{ item.icon }}
               </v-icon>
+              {{ item.title }}
             </v-btn>
           </v-layout>
         </div>
