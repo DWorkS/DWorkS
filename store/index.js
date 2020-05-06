@@ -30,6 +30,13 @@ export const state = () => ({
   ],
   projects: [
     {
+      title: 'Coronavirus Stats Tracker',
+      tag: 'visalist',
+      content: 'See COVID 19 Coronavirus pandemic curve, affected regions, stats, casualties and more near you on a world map.',
+      imgUrl: '/projects/coronavirus-background.jpg',
+      url: 'https://visalist.io/emergency/coronavirus?referrer=dworks'
+    },
+    {
       title: 'Visa List',
       tag: 'visalist',
       content: 'Find all the countries you can visit on your passport and know the visa requirements',
