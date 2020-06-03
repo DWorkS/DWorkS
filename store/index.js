@@ -30,8 +30,15 @@ export const state = () => ({
   ],
   projects: [
     {
+      title: 'Simple Ops',
+      tag: 'simpleops',
+      content: 'Simple websites performance monitoring service',
+      imgUrl: '/projects/simpleops-background.jpg',
+      url: 'https://simpleops.io?referrer=dworks'
+    },
+    {
       title: 'Coronavirus Stats Tracker',
-      tag: 'visalist',
+      tag: 'coronavirus',
       content: 'See COVID 19 Coronavirus pandemic curve, affected regions, stats, casualties and more near you on a world map.',
       imgUrl: '/projects/coronavirus-background.jpg',
       url: 'https://visalist.io/emergency/coronavirus?referrer=dworks'
