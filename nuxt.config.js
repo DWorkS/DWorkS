@@ -2,8 +2,12 @@ require('dotenv').config()
 
 const themeColor = '#2C2C2C'
 const appName = 'DWorkS'
-
+const isProd = process.env.NODE_ENV === 'production'
+const stripeKey = isProd ? 'pk_live_mb9W784ENBOgLl2LAHbRaPzC00cpxZMLK6' : 'pk_test_F3lp6SlCvBMBrtrUkia2ygTp00pgGllyml'
 module.exports = {
+  env: {
+    isDev: !isProd
+  },
   head: {
     title: appName,
     titleTemplate: '%s - ' + appName,
@@ -28,6 +32,9 @@ module.exports = {
     ['@nuxtjs/google-analytics', {
       id: process.env.ANALYTICS_ID,
       debug: { sendHitTask: process.env.ANALYTICS_ENABLED }
+    }],
+    ['nuxt-stripe-module', {
+      publishableKey: stripeKey
     }]
   ],
   buildModules: [

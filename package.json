@@ -19,6 +19,7 @@
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "nuxt": "2.12.2",
+    "nuxt-stripe-module": "^2.1.0",
     "vuetify": "^2.2.27"
   },
   "devDependencies": {
