@@ -43,7 +43,6 @@
       <v-flex d-flex xs12 sm8 md6>
         <v-card class="pa-3">
           <div class="v-list">
-            <list-item id="Dworks" image="/dworks.png" title="Built by DWorkS organisation" />
             <list-item id="Email" icon="email" title="Feed us back and give suggestions" />
             <list-item id="Twitter" image="/twitter.svg" title="Follow us on Twitter" />
             <list-item id="Facebook" image="/facebook.svg" title="Follow us on Facebook" />
