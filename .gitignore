@@ -88,4 +88,5 @@ sw.*
 static/manifest*.json
 static/sw.js
 static/workbox-sw*.js*
-public/index.html
+public
+*.cache

@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex xs12 md4>
         <div class="ma-5 pt-5 text-center">
-          <v-avatar size="125px" color="transparent">
+          <v-avatar size="125px" color="transparent" class="mb-12">
             <v-img src="logo.png" alt="DWorkS logo" />
           </v-avatar>
           <div class="white--text display-1 font-weight-medium">
@@ -22,7 +22,7 @@
               {{ item.title }}
             </v-btn>
           </v-layout>
-          <v-layout row wrap align-center justify-center mt-8>
+          <v-layout v-if="false" row wrap align-center justify-center mt-8>
             <v-flex shrink>
               <v-btn color="#6772E5" :loading="progress" large @click="openCheckout()">
                 Book 1-1 consultation
@@ -100,7 +100,7 @@ export default {
   }),
   mounted() {
     const query = this.$route.query
-    if (!this.isEmpty(query)) {
+    if (!this.isEmpty(query) && query.result) {
       if (query.result === this.success) {
         this.message = 'You will get details through a mail'
       } else {
