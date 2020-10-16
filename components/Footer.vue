@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark color="primary" height="auto">
+  <v-footer dark color="secondary" height="auto">
     <v-layout ma-2 column>
       <v-layout justify-center row wrap>
         <v-btn v-for="item in this.$store.state.footerItems" :key="item.title" color="white" pa-0 :title="item.title"

@@ -6,15 +6,15 @@ export default {
     dark: true,
     themes: {
       light: {
-        primary: '#4e3724',
-        secondary: '#37271a',
-        teritiary: '#FF9800',
+        primary: '#01589b',
+        secondary: '#00233e',
+        teritiary: '#0071BC',
         accent: '#FFC107'
       },
       dark: {
-        primary: '#4e3724',
-        secondary: '#37271a',
-        teritiary: '#FF9800',
+        primary: '#01589b',
+        secondary: '#00233e',
+        teritiary: '#0071BC',
         accent: '#FFC107'
       }
     }

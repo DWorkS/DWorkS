@@ -16,7 +16,7 @@
           </h3>
         </v-container>
       </v-card>
-      <v-switch v-if="false" v-model="darkTheme" class="pl-3" pl-3 :label="`${darkTheme ? `Dark` : ` Light `} Theme`" />
+      <v-switch v-model="darkTheme" class="pl-3" pl-3 :label="`${darkTheme ? `Dark` : ` Light `} Theme`" />
     </v-navigation-drawer>
     <v-app-bar :color="toolbarColor" dark app fixed :height="!colored ? 64 : 0" :flat="!colored" class="toolbar-index">
       <v-toolbar-side-icon v-if="showHamburger" aria-label="drawer menu" @click.stop="drawer = !drawer" />

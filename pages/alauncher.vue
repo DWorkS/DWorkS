@@ -1,5 +1,5 @@
 <template>
-  <v-container full-height class="view" mt-2 fluid grid-list-md>
+  <v-container light full-height class="view" mt-2 fluid grid-list-md>
     <v-layout d-flex row wrap justify-center>
       <v-flex>
         <div class="ml-2">
@@ -8,8 +8,8 @@
 
         <div id="content">
           <div>
-            <v-card hover class="my-2">
-              <div class="pa-4">
+            <v-card rounded class="my-2">
+              <div class="pa-8">
                 <p>
                   To see the <b>Google Now Feed</b> on the left, and make full use
                   of <b>At A Glance</b>, installing the <b>Companion Bridge</b> is
@@ -32,8 +32,8 @@
                 </p>
               </div>
             </v-card>
-            <v-card hover class="my-2">
-              <div class="pa-4">
+            <v-card rounded class="my-2">
+              <div class="pa-8">
                 <div class="text">
                   <b>Why do I need this?</b>
                 </div>
@@ -52,8 +52,8 @@
                 </p>
               </div>
             </v-card>
-            <v-card hover class="my-2">
-              <div class="pa-4">
+            <v-card rounded class="my-2">
+              <div class="pa-8">
                 <div class="text">
                   <b>Help, I am getting an error!</b>
                 </div>

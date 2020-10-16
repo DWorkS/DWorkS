@@ -6,15 +6,15 @@
           <v-avatar size="125px" color="transparent" class="mb-12">
             <v-img src="logo.png" alt="DWorkS logo" />
           </v-avatar>
-          <div class="white--text display-1 font-weight-medium">
+          <div class="display-1 font-weight-medium">
             DWorkS
           </div>
-          <h1 class="subtitle-1  text-center white--text pt-1 pb-3">
+          <h1 class="subtitle-1  text-center pt-1 pb-3">
             Build microstartups and open source projects to make a small
             difference
           </h1>
           <v-layout mt-5 justify-center row wrap>
-            <v-btn v-for="item in this.$store.state.contactItems" :key="item.title" color="white" pa-0 :title="item.title"
+            <v-btn v-for="item in this.$store.state.contactItems" :key="item.title" pa-0 :title="item.title"
                    :target="item.to.startsWith('https') ? `_blank` : ``" rounded text :href="item.to">
               <v-icon class="mr-2">
                 {{ item.icon }}
@@ -22,9 +22,9 @@
               {{ item.title }}
             </v-btn>
           </v-layout>
-          <v-layout v-if="false" row wrap align-center justify-center mt-8>
+          <v-layout row wrap align-center justify-center mt-8>
             <v-flex shrink>
-              <v-btn color="#6772E5" :loading="progress" large @click="openCheckout()">
+              <v-btn color="accent" :loading="progress" large @click="openCheckout()">
                 Book 1-1 consultation
               </v-btn>
             </v-flex>
@@ -38,7 +38,7 @@
         <div class="scrollable">
           <v-container fluid grid-list-md>
             <div class="padequaldiv">
-              <h2 class="ml-1 pt-3 pb-3 white--text headline font-weight-light">
+              <h2 class="ml-1 pt-3 pb-3 headline font-weight-light">
                 Microstartups
               </h2>
               <v-layout pb-3 row wrap>
@@ -49,7 +49,7 @@
                       <h2 class="headline">
                         {{ project.title }}
                       </h2>
-                      <v-btn absolute fab top right color="secondary" :title="project.tag" target="_blank"
+                      <v-btn absolute fab top right color="teritiary" :title="project.tag" target="_blank"
                              :href="project.url">
                         <v-icon>mdi-open-in-new</v-icon>
                       </v-btn>
@@ -60,7 +60,7 @@
                   </v-card>
                 </v-flex>
               </v-layout>
-              <h2 class="ml-1 pb-3 white--text headline font-weight-light">
+              <h2 class="ml-1 pb-3 headline font-weight-light">
                 Opensource
               </h2>
               <v-layout pb-2 row wrap>
@@ -71,7 +71,7 @@
                       <h2 class="headline">
                         {{ project.title }}
                       </h2>
-                      <v-btn absolute dark fab top right color="secondary" :title="project.tag" target="_blank"
+                      <v-btn absolute dark fab top right color="accent" :title="project.tag" target="_blank"
                              :href="project.url">
                         <v-icon>mdi-open-in-new</v-icon>
                       </v-btn>
