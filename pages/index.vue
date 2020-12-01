@@ -24,14 +24,11 @@
           </v-layout>
           <v-layout row wrap align-center justify-center mt-8>
             <v-flex shrink>
-              <v-btn color="accent" :loading="progress" large @click="openCheckout()">
+              <v-btn color="pink" :loading="progress" large @click="openDev()">
                 Book 1-1 consultation
               </v-btn>
             </v-flex>
           </v-layout>
-          <div id="message">
-            {{ message }}
-          </div>
         </div>
       </v-flex>
       <v-flex xs12 md8>
@@ -112,31 +109,8 @@ export default {
     isEmpty (obj) {
       return !obj || Object.keys(obj).length === 0
     },
-    async openCheckout() {
-      this.progress = true
-      const priceId = process.env.isDev ? 'price_1HBdkqCLMgqlslNLXtTSP9Tl' : 'price_1HBdlMCLMgqlslNLYyjj4f4U'
-      const successUrl = process.env.isDev ? 'http://localhost:3000/?result=success' : 'https://dworks.io/?result=success'
-      const cancelUrl = process.env.isDev ? 'http://localhost:3000/?result=failure' : 'https://dworks.io/?result=failure'
-      const checkoutOptions = {
-        lineItems: [{ price: priceId, quantity: 1 }],
-        mode: 'payment',
-        successUrl,
-        cancelUrl
-      }
-      let result = null
-      let message = ''
-      try {
-        result = await this.$stripe.import().redirectToCheckout(checkoutOptions)
-        if (result.error) {
-          message = result.error.message
-        }
-      } catch (error) {
-        message = error.message
-      }
-      this.progress = false
-      if (message) {
-        this.message = message
-      }
+    openDev() {
+      window.open('https://1hakr.com/?referrer=dworks', '_blank').focus()
     }
   }
 }
