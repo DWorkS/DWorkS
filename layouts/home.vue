@@ -16,12 +16,12 @@
       >
       <meta itemprop="url" content="https://dworks.co/">
     </div>
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
     <v-snackbar
       v-model="snackbar"
-      :timeout="0"
+      :timeout="-1"
       color="#ffffff"
       :top="true"
       :multi-line="true"
@@ -49,6 +49,43 @@ export default {
       dialog: false,
       menuItems: [{ title: 'Login', path: 'login', icon: 'code' }]
     }
+  },
+  head() {
+    const formattedTitle = 'DWorkS - Microstartup and Opensource apps'
+    const description =
+      'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
+    const head = {
+      title: formattedTitle,
+      titleTemplate: null,
+      meta: [
+        { hid: 'description', name: 'description', content: description },
+        { property: 'og:title', hid: 'og:title', content: formattedTitle },
+        { property: 'og:site_name', hid: 'og:site_name', content: 'DWorKS' },
+        { property: 'og:url', content: this.getFullUrl(this.$route.path) },
+        {
+          property: 'og:image',
+          content: this.getFullUrl('/feature_graphic.jpg')
+        },
+        {
+          property: 'og:description',
+          hid: 'og:description',
+          content: description
+        },
+        { property: 'twitter:title', content: formattedTitle },
+        {
+          property: 'twitter:site',
+          content: this.getFullUrl(this.$route.path)
+        },
+        {
+          property: 'twitter:image',
+          content: this.getFullUrl('/feature_graphic.jpg')
+        },
+        { property: 'twitter:description', content: description }
+      ],
+      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
+      script: [{ src: '/pwacompat.js', async: true }]
+    }
+    return head
   },
   computed: {
     toolbarColor() {
@@ -90,43 +127,6 @@ export default {
         )
         .focus()
     }
-  },
-  head() {
-    const formattedTitle = 'DWorkS - Microstartup and Opensource apps'
-    const description =
-      'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
-    const head = {
-      title: formattedTitle,
-      titleTemplate: null,
-      meta: [
-        { hid: 'description', name: 'description', content: description },
-        { property: 'og:title', hid: 'og:title', content: formattedTitle },
-        { property: 'og:site_name', hid: 'og:site_name', content: 'DWorKS' },
-        { property: 'og:url', content: this.getFullUrl(this.$route.path) },
-        {
-          property: 'og:image',
-          content: this.getFullUrl('/feature_graphic.jpg')
-        },
-        {
-          property: 'og:description',
-          hid: 'og:description',
-          content: description
-        },
-        { property: 'twitter:title', content: formattedTitle },
-        {
-          property: 'twitter:site',
-          content: this.getFullUrl(this.$route.path)
-        },
-        {
-          property: 'twitter:image',
-          content: this.getFullUrl('/feature_graphic.jpg')
-        },
-        { property: 'twitter:description', content: description }
-      ],
-      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
-      script: [{ src: '/pwacompat.js', async: true }]
-    }
-    return head
   }
 }
 </script>

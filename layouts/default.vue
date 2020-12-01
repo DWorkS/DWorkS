@@ -21,9 +21,9 @@
       :items="this.$store.state.headerItems"
       :title="toolbarTile"
     />
-    <v-content>
+    <v-main>
       <nuxt />
-    </v-content>
+    </v-main>
     <Footer />
   </v-app>
 </template>
@@ -42,6 +42,20 @@ export default {
       colored: false
     }
   },
+  head() {
+    const formattedTitle = 'DWorkS - Microstartup and Opensource apps'
+    const description =
+      'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
+    const head = {
+      title: formattedTitle,
+      meta: [
+        { hid: 'description', name: 'description', content: description }
+      ],
+      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
+      script: [{ src: '/pwacompat.js', async: true }]
+    }
+    return head
+  },
   computed: {
     toolbarTile() {
       return this.$store.state.currentTitle || this.$store.state.appName
@@ -58,20 +72,6 @@ export default {
       const barehost = host.replace('www.', '')
       return `https://${barehost}${path}`
     }
-  },
-  head() {
-    const formattedTitle = 'DWorkS - Microstartup and Opensource apps'
-    const description =
-      'Bulding microstartups like acrypto and anexplorer and to make a small difference in the world'
-    const head = {
-      title: formattedTitle,
-      meta: [
-        { hid: 'description', name: 'description', content: description }
-      ],
-      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
-      script: [{ src: '/pwacompat.js', async: true }]
-    }
-    return head
   }
 }
 </script>

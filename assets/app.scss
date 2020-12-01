@@ -284,7 +284,7 @@ a {
 .inset-margin-top {
   margin-top: env(safe-area-inset-top);
 }
-.v-content__wrap, .v-toolbar__extension {
+.v-main__wrap, .v-toolbar__extension {
   margin-top: env(safe-area-inset-top);
 }
 .v-toolbar__content {
