@@ -14,7 +14,7 @@
             difference
           </h1>
           <v-layout mt-5 justify-center row wrap>
-            <v-btn v-for="item in this.$store.state.contactItems" :key="item.title" pa-0 :title="item.title"
+            <v-btn v-for="item in $store.state.contactItems" :key="item.title" pa-0 :title="item.title"
                    :target="item.to.startsWith('https') ? `_blank` : ``" rounded text :href="item.to">
               <v-icon class="mr-2">
                 {{ item.icon }}
@@ -39,7 +39,7 @@
                 Microstartups
               </h2>
               <v-layout pb-3 row wrap>
-                <v-flex v-for="project in this.$store.state.projects" :key="project.title" x12 sm6 md6>
+                <v-flex v-for="project in $store.state.projects" :key="project.title" x12 sm6 md6>
                   <v-card class="ma-1" hover>
                     <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-1" />
                     <v-card-title primary-title class="halfway">
@@ -61,7 +61,7 @@
                 Opensource
               </h2>
               <v-layout pb-2 row wrap>
-                <v-flex v-for="project in this.$store.state.opensource" :key="project.title" x12 sm6 md6>
+                <v-flex v-for="project in $store.state.opensource" :key="project.title" x12 sm6 md6>
                   <v-card class="ma-1" hover>
                     <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-4" />
                     <v-card-title primary-title class="halfway">

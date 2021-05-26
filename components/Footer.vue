@@ -2,7 +2,7 @@
   <v-footer dark color="secondary" height="auto">
     <v-layout ma-2 column>
       <v-layout justify-center row wrap>
-        <v-btn v-for="item in this.$store.state.footerItems" :key="item.title" color="white" pa-0 :title="item.title"
+        <v-btn v-for="item in $store.state.footerItems" :key="item.title" color="white" pa-0 :title="item.title"
                :target="item.to.startsWith('https') ? `_blank` : ``" text small rounded :href="item.to">
           {{ item.title }}
         </v-btn>
@@ -15,10 +15,10 @@
         <v-card-actions class="hidden-xs-only mx-5 justify-center">
           <div>
             &copy; {{ new Date().getFullYear() }} -
-            <strong>{{ this.$store.state.appName }}</strong>
+            <strong>{{ $store.state.appName }}</strong>
           </div>
         </v-card-actions>
-        <v-btn v-for="icon in this.$store.state.footerSocialItems" :key="icon.title" icon dark :href="icon.url"
+        <v-btn v-for="icon in $store.state.footerSocialItems" :key="icon.title" icon dark :href="icon.url"
                :title="icon.title" target="_blank" class="mx-0">
           <v-avatar size="25px" tile>
             <img :src="`/${icon.img}`" :alt="icon.title">

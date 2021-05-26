@@ -18,7 +18,7 @@
     </div>
     <Header
       :colored="true"
-      :items="this.$store.state.headerItems"
+      :items="$store.state.headerItems"
       :title="toolbarTile"
     />
     <v-main>

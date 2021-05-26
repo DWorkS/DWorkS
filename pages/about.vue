@@ -9,7 +9,7 @@
                 <img src="/logo.png" height="40">
               </div>
               <v-list-tile-title>{{
-                this.$store.state.appName
+                $store.state.appName
               }}</v-list-tile-title>
             </a>
             <div class="pa-3">
@@ -32,7 +32,7 @@
             </v-btn>
           </div>
           <span>My name is <strong>Hari</strong>. I made
-            <strong>{{ this.$store.state.appName }}</strong>. We made this because we think a product like this needs to
+            <strong>{{ $store.state.appName }}</strong>. We made this because we think a product like this needs to
             exist.
           </span>
           <h4 class="mt-4 title text-center">
@@ -53,14 +53,14 @@
       <v-flex d-flex xs12 sm8 md6>
         <v-card class="pa-4">
           <h2 class="title py-3">
-            <b>Why {{ this.$store.state.appName }}?</b>
+            <b>Why {{ $store.state.appName }}?</b>
           </h2>
           <span>
             A year back i became one of my friends asked me to help him with his
             project. So as a friend i did but soon he kept asking me for help
             and i quickly found out that in the begining of their career lots of
             developers need this kind of help. And
-            {{ this.$store.state.appName }} was born.
+            {{ $store.state.appName }} was born.
           </span>
         </v-card>
       </v-flex>

@@ -52,7 +52,10 @@
                   <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a>
                 </li>
                 <li>
-                  <a href="https://firebase.google.com/policies/analytics" target="_blank">Firebase Analytics</a>
+                  <a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a>
+                </li>
+                <li>
+                  <a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a>
                 </li>
                 <!---->
               </ul>
@@ -139,7 +142,7 @@
             <p><strong>Contact Us</strong></p>
             <p>
               If you have any questions or suggestions about my Privacy Policy,
-              do not hesitate to contact me.
+              do not hesitate to contact support@dworks.io.
             </p>
           </div>
         </section>
