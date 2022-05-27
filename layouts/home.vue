@@ -61,10 +61,10 @@ export default {
         { hid: 'description', name: 'description', content: description },
         { property: 'og:title', hid: 'og:title', content: formattedTitle },
         { property: 'og:site_name', hid: 'og:site_name', content: 'DWorKS' },
-        { property: 'og:url', content: this.getFullUrl(this.$route.path) },
+        { property: 'og:url', content: this.$getFullUrl(this.$route.path) },
         {
           property: 'og:image',
-          content: this.getFullUrl('/feature_graphic.jpg')
+          content: this.$getFullUrl('/feature_graphic.jpg')
         },
         {
           property: 'og:description',
@@ -74,15 +74,15 @@ export default {
         { property: 'twitter:title', content: formattedTitle },
         {
           property: 'twitter:site',
-          content: this.getFullUrl(this.$route.path)
+          content: this.$getFullUrl(this.$route.path)
         },
         {
           property: 'twitter:image',
-          content: this.getFullUrl('/feature_graphic.jpg')
+          content: this.$getFullUrl('/feature_graphic.jpg')
         },
         { property: 'twitter:description', content: description }
       ],
-      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
+      link: [{ rel: 'canonical', href: this.$getFullUrl(this.$route.path) }],
       script: [{ src: '/pwacompat.js', async: true }]
     }
     return head
@@ -110,13 +110,6 @@ export default {
     },
     onScroll(e) {
       this.colored = window.scrollY > 100
-    },
-    getFullUrl(path) {
-      const host = process.server
-        ? this.$store.state.appDomain
-        : window.location.host
-      const barehost = host.replace('www.', '')
-      return `https://${barehost}${path}`
     },
     openProductHunt() {
       this.snackbar = false

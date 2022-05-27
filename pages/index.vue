@@ -14,8 +14,9 @@
             difference
           </h1>
           <v-layout mt-5 justify-center row wrap>
-            <v-btn v-for="item in $store.state.contactItems" :key="item.title" pa-0 :title="item.title"
-                   :target="item.to.startsWith('https') ? `_blank` : ``" rounded text :href="item.to">
+            <v-btn
+              v-for="item in $store.state.contactItems" :key="item.title" pa-0 :title="item.title"
+              :target="item.to.startsWith('https') ? `_blank` : ``" rounded text :href="item.to">
               <v-icon class="mr-2">
                 {{ item.icon }}
               </v-icon>
@@ -46,8 +47,9 @@
                       <h2 class="headline">
                         {{ project.title }}
                       </h2>
-                      <v-btn absolute fab top right color="teritiary" :title="project.tag" target="_blank"
-                             :href="project.url">
+                      <v-btn
+                        absolute fab top right color="teritiary" :title="project.tag" target="_blank"
+                        :href="project.url">
                         <v-icon>mdi-open-in-new</v-icon>
                       </v-btn>
                     </v-card-title>
@@ -68,8 +70,9 @@
                       <h2 class="headline">
                         {{ project.title }}
                       </h2>
-                      <v-btn absolute dark fab top right color="accent" :title="project.tag" target="_blank"
-                             :href="project.url">
+                      <v-btn
+                        absolute dark fab top right color="accent" :title="project.tag" target="_blank"
+                        :href="project.url">
                         <v-icon>mdi-open-in-new</v-icon>
                       </v-btn>
                     </v-card-title>

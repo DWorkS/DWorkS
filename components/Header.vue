@@ -92,16 +92,9 @@ export default {
     }
   },
   methods: {
-    getFullUrl(path) {
-      const host = process.server
-        ? this.$store.state.appDomain
-        : window.location.host // this.$ssrContext.req.headers.host
-      const barehost = host.replace('www.', '').replace('amp.', '')
-      return `https://${barehost}${path}`
-    },
     share() {
       if (navigator.share) {
-        const url = this.getFullUrl(this.$route.path)
+        const url = this.$getFullUrl(this.$route.path)
         navigator.share({
           title: this.shareTitle,
           text: this.shareText,
@@ -113,7 +106,7 @@ export default {
     },
     shareUrl(social) {
       this.sheet = false
-      const url = this.getFullUrl(this.$route.path)
+      const url = this.$getFullUrl(this.$route.path)
 
       let shareUrl
       switch (social) {

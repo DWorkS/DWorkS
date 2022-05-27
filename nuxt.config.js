@@ -28,6 +28,9 @@ module.exports = {
   css: [
     '~/assets/app'
   ],
+  plugins: [
+    '~/plugins/global.js'
+  ],
   modules: [
     ['@nuxtjs/google-analytics', {
       id: process.env.ANALYTICS_ID,

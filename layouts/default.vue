@@ -51,7 +51,7 @@ export default {
       meta: [
         { hid: 'description', name: 'description', content: description }
       ],
-      link: [{ rel: 'canonical', href: this.getFullUrl(this.$route.path) }],
+      link: [{ rel: 'canonical', href: this.$getFullUrl(this.$route.path) }],
       script: [{ src: '/pwacompat.js', async: true }]
     }
     return head
@@ -62,15 +62,6 @@ export default {
     },
     toolbarColor() {
       return this.colored ? 'primary' : 'transparent'
-    }
-  },
-  methods: {
-    getFullUrl(path) {
-      const host = process.server
-        ? this.$store.state.appDomain
-        : window.location.host
-      const barehost = host.replace('www.', '')
-      return `https://${barehost}${path}`
     }
   }
 }

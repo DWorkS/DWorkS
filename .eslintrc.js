@@ -12,6 +12,8 @@ module.exports = {
     'no-console': 'off',
     'space-before-function-paren': 'off',
     'vue/max-attributes-per-line': 'off',
-    'vue/html-closing-bracket-newline': 'off'
+    'vue/html-closing-bracket-newline': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/no-reserved-component-names' : 'off'
   }
 }
