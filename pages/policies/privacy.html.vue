@@ -153,7 +153,7 @@
 
 <script>
 export default {
-  name: 'About',
+  name: 'Privacy',
   asyncData({
     store
   }) {

@@ -3,18 +3,18 @@
     <span itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="DWorkS">
       <link itemprop="url" href="https://dworks.io/">
-      <link itemprop="logo" src="https://dworks.io/images/logo.png">
+      <link itemprop="logo" src="https://dworks.io/logo.png">
       <link itemprop="sameAs" href="https://facebook.com/1hakr">
       <link itemprop="sameAs" href="https://twitter.com/1hakr">
       <link itemprop="sameAs" href="https://instagram.com/1hakr">
     </span>
     <div itemscope itemtype="http://schema.org/WebSite">
-      <meta itemprop="name" content="Dev Mentor">
+      <meta itemprop="name" content="DWorKS">
       <meta
         itemprop="alternateName"
         content="Get help from developer experts across the world"
       >
-      <meta itemprop="url" content="https://devmento.co/">
+      <meta itemprop="url" content="https://dworks.co/">
     </div>
     <Header
       :colored="true"
@@ -29,13 +29,7 @@
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
 export default {
-  components: {
-    Header,
-    Footer
-  },
   data() {
     return {
       sidebar: false,

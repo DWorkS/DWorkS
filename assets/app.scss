@@ -59,6 +59,11 @@
   position: relative;
 }
 
+.minheight {
+  min-height: 90vh !important;
+}
+
+
 .plainlist-ul  {
   list-style-type: none;
 }
@@ -289,4 +294,26 @@ a {
 }
 .v-toolbar__content {
   margin-top: env(safe-area-inset-top);
+}
+
+.map-container {
+  width:100%;
+  position:relative;
+  margin:auto;
+  padding:0px;
+}
+
+.map-progress {
+  width:50%;
+  height:50%;
+  position: absolute !important;
+  top:25%;
+  left:25%;
+  text-align:center;
+}
+
+.map-center {
+  top:0%;
+  position: absolute !important;
+  text-align:center;
 }

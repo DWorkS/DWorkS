@@ -13,19 +13,19 @@ export const state = () => ({
   ],
   footerItems: [
     { title: 'Home', to: '/' },
+    { title: 'About', to: '/about' },
+    { title: 'Open', to: '/open' },
     { title: 'Terms', to: '/policies/terms.html' },
     { title: 'Privacy', to: '/policies/privacy.html' }
   ],
   footerSocialItems: [
     { img: 'facebook.svg', title: 'Facebook', url: 'https://www.facebook.com/1DWorkS' },
-    { img: 'twitter.svg', title: 'Twitter', url: 'https://twitter.com/1hakr' },
-    { img: 'gplus.svg', title: 'Google+', url: 'https://plus.google.com/+HariKrishnaDulipudi' }
+    { img: 'twitter.svg', title: 'Twitter', url: 'https://twitter.com/1hakr' }
   ],
   shareItems: [
     { img: 'facebook.svg', title: 'Facebook' },
     { img: 'twitter.svg', title: 'Twitter' },
-    { img: 'linkedin.svg', title: 'LinkedIn' },
-    { img: 'gplus.svg', title: 'Google+' }
+    { img: 'linkedin.svg', title: 'LinkedIn' }
   ],
   projects: [
     {

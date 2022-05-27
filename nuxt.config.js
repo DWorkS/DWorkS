@@ -28,6 +28,7 @@ module.exports = {
   css: [
     '~/assets/app'
   ],
+  components: true,
   plugins: [
     '~/plugins/global.js'
   ],

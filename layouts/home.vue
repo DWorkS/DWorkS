@@ -1,5 +1,5 @@
 <template>
-  <v-app dark class="primary">
+  <v-app :dark="false">
     <span itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="DWorkS">
       <link itemprop="url" href="https://dworks.io/">
@@ -10,23 +10,13 @@
     </span>
     <div itemscope itemtype="http://schema.org/WebSite">
       <meta itemprop="name" content="DWorKS">
-      <meta
-        itemprop="alternateName"
-        content="Get help from developer experts across the world"
-      >
+      <meta itemprop="alternateName" content="Get help from developer experts across the world">
       <meta itemprop="url" content="https://dworks.co/">
     </div>
     <v-main>
       <nuxt />
     </v-main>
-    <v-snackbar
-      v-model="snackbar"
-      :timeout="-1"
-      color="#ffffff"
-      :top="true"
-      :multi-line="true"
-      class="black--text"
-    >
+    <v-snackbar v-model="snackbar" :timeout="-1" color="#ffffff" :top="true" :multi-line="true" class="black--text">
       <span>
         🏆😻 <b>VisaList</b> is Nominated at Golden Kitty Awards 2018 for Side
         Project!
@@ -35,7 +25,6 @@
         &nbsp;&nbsp;&nbsp;Vote now&nbsp;&nbsp;&nbsp;
       </v-btn>
     </v-snackbar>
-    <!-- <Footer /> -->
   </v-app>
 </template>
 

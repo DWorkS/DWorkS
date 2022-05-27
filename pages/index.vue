@@ -31,6 +31,7 @@
             </v-flex>
           </v-layout>
         </div>
+        <Footer :plain="true" />
       </v-flex>
       <v-flex xs12 md8>
         <div class="scrollable">
@@ -59,10 +60,10 @@
                   </v-card>
                 </v-flex>
               </v-layout>
-              <h2 class="ml-1 pb-3 headline font-weight-light">
+              <h2 v-if="false" class="ml-1 pb-3 headline font-weight-light">
                 Opensource
               </h2>
-              <v-layout pb-2 row wrap>
+              <v-layout v-if="false" pb-2 row wrap>
                 <v-flex v-for="project in $store.state.opensource" :key="project.title" x12 sm6 md6>
                   <v-card class="ma-1" hover>
                     <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-4" />

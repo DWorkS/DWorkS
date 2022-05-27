@@ -1,5 +1,5 @@
 <template>
-  <v-footer dark color="secondary" height="auto">
+  <v-footer dark :color="plain ? 'transparent' : 'secondary'" height="auto" class="pa-8 mt-8">
     <v-layout ma-2 column>
       <v-layout justify-center row wrap>
         <v-btn
@@ -9,7 +9,7 @@
         </v-btn>
       </v-layout>
       <v-layout row justify-center wrap>
-        <v-btn text target="_blank" title="dworks" href="https://dworks.io/">
+        <v-btn v-if="false" text target="_blank" title="dworks" href="https://dworks.io/">
           <img src="/dworks_app.svg" alt="dworks logo">
         </v-btn>
         <strong v-show="false" wrap justify-center class="subheading text-center">Dev Mentors just for you!</strong>
@@ -30,3 +30,9 @@
     </v-layout>
   </v-footer>
 </template>
+
+<script>
+export default {
+  props: ['plain']
+}
+</script>
