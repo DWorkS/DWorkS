@@ -2,7 +2,7 @@
   <v-container full-height class="view" mt-2 fluid grid-list-md>
     <v-layout d-flex row wrap justify-center>
       <v-flex xs12 sm8 md6>
-        <v-card class="pa-3">
+        <v-card class="pa-6">
           <div class="v-list">
             <a class="v-list__tile v-list__tile--link">
               <div class="v-list__tile__avatar">
@@ -23,11 +23,11 @@
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm8 md6>
-        <v-card class="pa-3">
+        <v-card class="pa-6">
           <div class="mb-3 text-center">
             <v-btn large fab text light href="https://twitter.com/1HaKr" title="1HaKr twitter profile" target="_blank">
               <v-avatar size="70">
-                <img src="/photo.jpg" alt="Hari Krishna">
+                <img src="/profile_picture.jpg" alt="Hari Krishna">
               </v-avatar>
             </v-btn>
           </div>
@@ -40,18 +40,17 @@
           </h4>
         </v-card>
       </v-flex>
-      <v-flex d-flex xs12 sm8 md6>
+      <v-flex flex-grow-1 xs12 sm8 md6>
         <v-card class="pa-3">
           <div class="v-list">
-            <list-item id="Email" icon="email" title="Feed us back and give suggestions" />
+            <list-item id="Email" icon="mdi-email" title="Feed us back and give suggestions" />
             <list-item id="Twitter" image="/twitter.svg" title="Follow us on Twitter" />
             <list-item id="Facebook" image="/facebook.svg" title="Follow us on Facebook" />
-            <list-item id="Google+" image="/gplus.svg" title="Follow us on Google+" />
           </div>
         </v-card>
       </v-flex>
       <v-flex d-flex xs12 sm8 md6>
-        <v-card class="pa-4">
+        <v-card class="pa-6">
           <h2 class="title py-3">
             <b>Why {{ $store.state.appName }}?</b>
           </h2>

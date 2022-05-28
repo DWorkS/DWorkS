@@ -2,7 +2,7 @@
   <v-list-item @click="openLinks(id)">
     <v-list-item-icon>
       <v-avatar v-if="image" size="35">
-        <simple-image :src="image" />
+        <SimpleImage :src="image" />
       </v-avatar>
       <v-btn v-else-if="circle" text small class="ma-0 primary" fab dark>
         <v-icon>{{ icon }}</v-icon>

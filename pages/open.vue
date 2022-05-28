@@ -26,10 +26,10 @@
           <span class="title bolder ml-2">💰 Revenue</span>
           <v-card class="pa-2 ma-2 round-card">
             <div class="map-container">
-              <v-responsive class="chart-big-iframe">
+              <v-responsive class="chart-iframe">
                 <load-only>
                   <iframe
-                    class="chart-big-iframe" width="100%" src="https://datastudio.google.com/embed/reporting/afc619e5-3f63-4f56-acb5-d9ec8d2755d3/page/v9aQ"
+                    class="chart-iframe" width="100%" src="https://datastudio.google.com/embed/reporting/afc619e5-3f63-4f56-acb5-d9ec8d2755d3/page/v9aQ"
                     frameborder="0" style="border:0" allowfullscreen @load="load" />
                 </load-only>
               </v-responsive>
@@ -104,7 +104,7 @@ export default {
 }
 
 .chart-iframe {
-  height: 600px !important;
+  height: 700px !important;
 }
 
 .chart-big-iframe {
