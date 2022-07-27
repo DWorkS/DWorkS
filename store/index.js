@@ -61,7 +61,7 @@ export const state = () => ({
       tag: 'anexplorer',
       content: 'Simple All-in-one file manager for phone, tablets, watches, chromebook and TV',
       imgUrl: '/projects/anexplorer-background.jpg',
-      url: 'https://anexplorer.co?referrer=dworks'
+      url: 'https://anexplorer.io?referrer=dworks'
     },
     {
       title: 'ALauncher',
