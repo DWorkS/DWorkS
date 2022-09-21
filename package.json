@@ -19,7 +19,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/pwa": "^3.3.5",
     "nuxt": "~2.14.12",
-    "vuetify": "^2.6.6"
+    "vuetify": "^2.6.10"
   },
   "devDependencies": {
     "@mdi/font": "^6.7.96",
