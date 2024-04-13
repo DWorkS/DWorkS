@@ -1,0 +1,9 @@
+title: Terms & Conditions
+head.title: Terms & Conditions
+description: 'Terms & Conditions of DWorkS.'
+navigation: false
+links:
+  - label: 'Home'
+    to: '/'
+  - label: 'Terms'
+    to: '/terms'

@@ -1,0 +1,16 @@
+title: About
+head.title: About DWorkS
+description: 'DWorkS is a company dedicated to creating microstartups and offering services aimed at making a meaningful impact.'
+navigation: false
+about: |
+  DWorkS is dedicated to creating microstartups and offering services aimed at making a meaningful impact. 
+  The aim is building solutions to problems we face in day to day life, show small that may be.
+origin: |
+  There were many problems that i was seeing, i thought why not solve those problems that i faced and 
+  in the process build a solution so others might find it useful and so DWorkS was born in 2009.
+intro: My name is Hari. I the founder of DWorkS. We made this because we think a company like this needs to exist.
+links:
+  - label: 'Home'
+    to: '/'
+  - label: 'About'
+    to: '/about'

@@ -1,127 +1,76 @@
-<template>
-  <v-layout column>
-    <v-container full-height mt-2 fluid grid-list-md>
-      <v-layout wrap justify-center class="minheight">
-        <v-flex xs12 sm8 md8>
-          <span class="text-h5 bolder ml-2">📊 Micro Startup</span>
-          <v-layout mt-2 pa-2 row wrap>
-            <v-flex xs12 md6>
-              <v-card class="pa-4 round-card card-padding">
-                <span>
-                  <nuxt-link title="DWorkS" to="/"><b>DWorkS</b></nuxt-link>
-                  is a <a rel="noopener nofollow" target="_blank" class="main-link" title="Micro Startup" href="https://twitter.com/levelsio/status/1194192590309953537"><b>Micro Startup™</b></a> which means its not a startup or a company and is completely bootstrapped.
-                  DWorkS is an <a class="main-link" target="_blank" title="Open Startup" href="https://www.openstartuplist.com" rel="nofollow noreferrer noopener"> <b>Open Startup™</b></a>, which means it operates fully transparent and shares its metrics, including revenue, users and traffic.
-                  I'm  proud to share DWorkS stats as part of the Open Startups movement.
-                  <br><br>
-                  Revenue is partially through by <a rel="noopener nofollow" href="https://stripe.com">Stripe</a>, traffic by <a rel="noopener nofollow" href="https://google.com/analytics">Google Analytics</a>, uptime by <a href="https://simpleops.io?referrer=visalist">Simple Ops</a>.
-                </span>
-              </v-card>
-            </v-flex>
-            <v-flex xs12 md6>
-              <subscribe-form :responsive="true" />
-            </v-flex>
-          </v-layout>
-        </v-flex>
-        <v-flex xs12 sm8 md8>
-          <span class="title bolder ml-2">💰 Revenue</span>
-          <v-card class="pa-2 ma-2 round-card">
-            <div class="map-container">
-              <v-responsive class="chart-iframe">
-                <load-only>
-                  <iframe
-                    class="chart-iframe" width="100%" src="https://datastudio.google.com/embed/reporting/afc619e5-3f63-4f56-acb5-d9ec8d2755d3/page/v9aQ"
-                    frameborder="0" style="border:0" allowfullscreen @load="load" />
-                </load-only>
-              </v-responsive>
-              <div class="map-progress">
-                <v-layout v-if="loading" class="fill-height ma-0" align-center justify-center>
-                  <v-progress-circular indeterminate color="blue" class="center" />
-                </v-layout>
-              </div>
-            </div>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-layout>
-</template>
+<script setup lang="ts">
+const route = useRoute()
+const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+}
 
-<script>
-export default {
-  name: 'Open',
-  data() {
-    return {
-      loading: true
-    }
+useSeoMeta({
+  title: page.value.title,
+  ogTitle: page.value.title,
+  description: page.value.description,
+  ogDescription: page.value.description
+})
+const links = page.value.links
+
+const loading = ref(true)
+
+const iframeProgress = computed({
+  get() {
+    return loading.value
   },
-  fetch({ store }) {
-    store.commit('SET_CURRENT_TITLE', 'Micro Startup')
-  },
-  head() {
-    const formattedTitle = 'Micro Startup - DWorkS'
-    const description = 'DWorkS is a Micro Startup™ which means its not a startup or a company and completely bootstrapped. Its also a Open Startup™ which means it operates fully transparent and shares its metrics, including revenue, users and traffic.'
-    const backgroundImage = '/img/thumbnail/feature_graphic4.jpg'
-    return {
-      title: formattedTitle,
-      titleTemplate: null,
-      meta: [
-        { name: 'description', hid: 'description', content: description },
-        { property: 'og:title', hid: 'og:title', content: formattedTitle },
-        { property: 'og:site_name', hid: 'og:site_name', content: 'DWorkS' },
-        { property: 'og:url', content: this.$getFullUrl(this.$route.path) },
-        { property: 'og:image', content: this.$getFullUrl(backgroundImage) },
-        { property: 'og:description', hid: 'og:description', content: description },
-        { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: formattedTitle },
-        { name: 'twitter:site', content: '@1HaKr' },
-        { name: 'twitter:image', content: this.$getFullUrl(backgroundImage) },
-        { name: 'twitter:description', content: description }
-      ]
-    }
-  },
-  methods: {
-    load() {
-      this.loading = false
-    }
+  set(newValue: boolean) {
+    loading.value = newValue
   }
+})
+
+function loadFrame() {
+  loading.value = false
 }
 </script>
 
-<style>
-.main-link {
-  border-bottom: 3px solid #FF9800;
-  color: #FF9800 !important;
-}
-
-.main-link:hover {
-  background-color:#FFC107!important;
-  border-color:#FFC107!important;
-  color: white !important;
-}
-
-.status-iframe {
-  height: 600px !important;
-}
-
-.chart-iframe {
-  height: 700px !important;
-}
-
-.chart-big-iframe {
-  height: 800px !important;
-}
-
-@media only screen and (max-width: 960px) {
-  .chart-iframe {
-    height: 200px !important;
-  }
-  .chart-big-iframe {
-    height: 40px !important;
-  }
-}
-
-.widget-iframe {
-  height: 450px !important;
-  min-width: 350px !important;
-}
-</style>
+<template>
+  <Container :links="links">
+    <template #header>
+      <PageHeader :title="page.title" />
+    </template>
+    <UPageCard>
+      <span>
+        <ActiveLink title="DWorkS" to="/"><b>DWorkS</b></ActiveLink>
+        is a <ActiveLink rel="noopener nofollow" target="_blank" title="Micro Startup"
+          href="https://twitter.com/levelsio/status/1194192590309953537"><b>Micro Startup™</b></ActiveLink> which means
+        its
+        not a startup or a company and is completely bootstrapped.
+        DWorkS is an <a class="main-link" target="_blank" title="Open Startup" href="https://www.openstartuplist.com"
+          rel="nofollow noreferrer noopener"> <b>Open Startup™</b></a>, which means it operates fully transparent and
+        shares
+        its metrics, including revenue, users and traffic.
+        I'm proud to share DWorkS stats as part of the Open Startups movement.
+        <br><br>
+        Revenue is partially through by <a rel="noopener nofollow" href="https://stripe.com">Stripe</a>, traffic by <a
+          rel="noopener nofollow" href="https://google.com/analytics">Google Analytics</a>, uptime by <a
+          href="https://simpleops.io?referrer=visalist">Simple Ops</a>.
+      </span>
+    </UPageCard>
+    <UPageCard class="my-4" :ui="{ strategy: 'override', body: { padding: '' } }">
+      <div class="relative flex justify-center items-center h-[200px] sm:h-[400px] lg:h-[300px] xl:h-[520px]">
+        <svg v-if="iframeProgress" aria-hidden="true"
+          class="absolute w-16 h-16 text-transparent animate-spin fill-primary" viewBox="0 0 100 101" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+            fill="currentColor" />
+          <path
+            d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+            fill="currentFill" />
+        </svg>
+        <ClientOnly>
+          <iframe class="rounded-xl h-[200px] sm:h-[400px] lg:h-[300px] xl:h-[520px]" width="100%" frameborder="0"
+            style="border:0" allowfullscreen
+            src="https://datastudio.google.com/embed/reporting/afc619e5-3f63-4f56-acb5-d9ec8d2755d3/page/v9aQ"
+            @load="loadFrame()" />
+        </ClientOnly>
+      </div>
+    </UPageCard>
+  </Container>
+</template>

@@ -1,122 +1,58 @@
 <template>
-  <v-container pa-2 fluid grid-list-md>
-    <v-layout row wrap>
-      <v-flex xs12 md4>
-        <div class="ma-5 pt-5 text-center">
-          <v-avatar size="125px" color="transparent" class="mb-12">
-            <v-img src="logo.png" alt="DWorkS logo" />
-          </v-avatar>
-          <div class="display-1 font-weight-medium">
-            DWorkS
-          </div>
-          <h1 class="subtitle-1  text-center pt-1 pb-3">
-            Build microstartups and open source projects to make a small
-            difference
-          </h1>
-          <v-layout mt-5 justify-center row wrap>
-            <v-btn
-              v-for="item in $store.state.contactItems" :key="item.title" pa-0 :title="item.title"
-              :target="item.to.startsWith('https') ? `_blank` : ``" rounded text :href="item.to">
-              <v-icon class="mr-2">
-                {{ item.icon }}
-              </v-icon>
-              {{ item.title }}
-            </v-btn>
-          </v-layout>
-          <v-layout row wrap align-center justify-center mt-8>
-            <v-flex shrink>
-              <v-btn color="pink" :loading="progress" large @click="openDev()">
-                Book 1-1 consultation
-              </v-btn>
-            </v-flex>
-          </v-layout>
-        </div>
-        <Footer :plain="true" />
-      </v-flex>
-      <v-flex xs12 md8>
-        <div class="scrollable">
-          <v-container fluid grid-list-md>
-            <div class="padequaldiv">
-              <h2 class="ml-1 pt-3 pb-3 headline font-weight-light">
-                Microstartups
-              </h2>
-              <v-layout pb-3 row wrap>
-                <v-flex v-for="project in $store.state.projects" :key="project.title" x12 sm6 md6>
-                  <v-card class="ma-1" hover>
-                    <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-1" />
-                    <v-card-title primary-title class="halfway">
-                      <h2 class="headline">
-                        {{ project.title }}
-                      </h2>
-                      <v-btn
-                        absolute fab top right color="teritiary" :title="project.tag" target="_blank"
-                        :href="project.url">
-                        <v-icon>mdi-open-in-new</v-icon>
-                      </v-btn>
-                    </v-card-title>
-                    <v-card-text class="pt-0">
-                      {{ project.content }}
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-              <h2 v-if="false" class="ml-1 pb-3 headline font-weight-light">
-                Opensource
-              </h2>
-              <v-layout v-if="false" pb-2 row wrap>
-                <v-flex v-for="project in $store.state.opensource" :key="project.title" x12 sm6 md6>
-                  <v-card class="ma-1" hover>
-                    <v-img :src="project.imgUrl" aspect-ratio="2" class="grey lighten-4" />
-                    <v-card-title primary-title class="halfway">
-                      <h2 class="headline">
-                        {{ project.title }}
-                      </h2>
-                      <v-btn
-                        absolute dark fab top right color="accent" :title="project.tag" target="_blank"
-                        :href="project.url">
-                        <v-icon>mdi-open-in-new</v-icon>
-                      </v-btn>
-                    </v-card-title>
-                    <v-card-text class="pt-0">
-                      {{ project.content }}
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
+  <div v-if="page">
+    <ULandingHero :title="page.hero.title" :description="page.hero.description" :links="page.hero.links"
+      class="py-10 sm:py-10 md:py-10" :ui="{ title: 'text-4xl sm:text-5xl' }">
+      <div
+        class="absolute inset-0 landing-grid z-[-1] [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]" />
+    </ULandingHero>
+
+    <ULandingSection class="py-10 sm:py-10 md:pby-10" :ui="{ container: 'gap-10 sm:gap-y-10 flex flex-col' }">
+      <div class="text-center flex flex-col items-center">
+        <h2 class="text-3xl font-bold tracking-tight text-secondary">
+          {{ page.startups.title }}
+        </h2>
+      </div>
+      <UPageGrid>
+        <div v-for="(startup, index) in page.startups.items" :key="index" class="break-inside-avoid">
+          <UCard :ui="{ strategy: 'override', header: { padding: '' }, body: { padding: 'p-4', } }">
+            <template #header>
+              <div class="min-w-[380px] h-[185px]">
+                <NuxtImg :src="startup.imgUrl" class="w-full rounded-t-lg" draggable="false"
+                  :loading="imageLoadingAttr(index)" format="webp" width="380" height="185" />
+              </div>
+            </template>
+            <div class="block text-end -mt-10">
+              <UButton icon="i-heroicons-arrow-top-right-on-square" size="xl" color="primary" variant="solid" padded
+                :trailing="true" :to="startup.url" target="_blank" />
             </div>
-          </v-container>
+            <div class="text-gray-900 dark:text-white text-base font-bold truncate">
+              {{ startup.title }}
+            </div>
+            <span class="text-[15px] text-gray-500 dark:text-gray-400 mt-1">{{ startup.content }}</span>
+          </UCard>
         </div>
-      </v-flex>
-    </v-layout>
-  </v-container>
+      </UPageGrid>
+    </ULandingSection>
+  </div>
 </template>
 
-<script>
-export default {
-  layout: 'home',
-  data: () => ({
-    success: 'success',
-    message: '',
-    progress: false
-  }),
-  mounted() {
-    const query = this.$route.query
-    if (!this.isEmpty(query) && query.result) {
-      if (query.result === this.success) {
-        this.message = 'You will get details through a mail'
-      } else {
-        this.message = 'Your booking failed'
-      }
-    }
-  },
-  methods: {
-    isEmpty (obj) {
-      return !obj || Object.keys(obj).length === 0
-    },
-    openDev() {
-      window.open('https://1hakr.com/?referrer=dworks', '_blank').focus()
-    }
-  }
+<script setup lang="ts">
+
+const { data: page } = await useAsyncData('index', () => queryContent('/').findOne())
+if (!page.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
+
+definePageMeta({
+  layout: 'home'
+})
+
+useSeoMeta({
+  titleTemplate: '',
+  title: page.value.title,
+  ogTitle: page.value.title,
+  description: page.value.description,
+  ogDescription: page.value.description
+})
 
 </script>

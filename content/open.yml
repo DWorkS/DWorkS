@@ -1,0 +1,9 @@
+title: Micro Startup
+head.title: Open Micro Startups
+description: 'DWorkS is a Micro Startup™.'
+navigation: false
+links:
+  - label: 'Home'
+    to: '/'
+  - label: 'Microstartup'
+    to: '/open'
