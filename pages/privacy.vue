@@ -19,7 +19,7 @@ const links = page.value.links
     <template #header>
       <PageHeader :title="page.title" />
     </template>
-    <UPageCard>
+    <CorePageCard>
       <section>
         <div>
           <p>
@@ -68,7 +68,8 @@ const links = page.value.links
                 <a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a>
               </li>
               <li>
-                <a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for Firebase</a>
+                <a href="https://firebase.google.com/policies/analytics" target="_blank">Google Analytics for
+                  Firebase</a>
               </li>
               <li>
                 <a href="https://firebase.google.com/support/privacy/" target="_blank">Firebase Crashlytics</a>
@@ -170,6 +171,6 @@ const links = page.value.links
           </p>
         </div>
       </section>
-    </UPageCard>
+    </CorePageCard>
   </Container>
 </template>

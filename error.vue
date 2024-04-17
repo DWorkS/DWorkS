@@ -2,17 +2,15 @@
   <div>
     <Header />
 
-    <UMain>
-      <UContainer>
-        <UPage>
+    <CoreMain>
+      <CoreContainer>
+        <CorePage>
           <Error :error="error" message="You have travalled here through our secret time machine. Go back!" />
-        </UPage>
-      </UContainer>
-    </UMain>
+        </CorePage>
+      </CoreContainer>
+    </CoreMain>
 
     <Footer />
-
-    <UNotifications />
   </div>
 </template>
 

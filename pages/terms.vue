@@ -19,7 +19,7 @@ const links = page.value.links
     <template #header>
       <PageHeader :title="page.title" />
     </template>
-    <UPageCard>
+    <CorePageCard>
       <section>
         <div>
           <div>
@@ -138,6 +138,6 @@ const links = page.value.links
           </div>
         </div>
       </section>
-    </UPageCard>
+    </CorePageCard>
   </Container>
 </template>

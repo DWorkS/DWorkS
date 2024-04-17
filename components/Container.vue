@@ -2,9 +2,9 @@
   <div class="px-4 sm:px-2 lg:px-0">
     <slot name="header" />
 
-    <UPageBody :ui="{ wrapper: 'mt-8 pb-8', }">
+    <CorePageBody :ui="{ wrapper: 'mt-8 pb-8', }">
       <slot />
-    </UPageBody>
+    </CorePageBody>
     <div v-if="links" class="mb-4">
       <UBreadcrumb :links="links" />
     </div>

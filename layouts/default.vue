@@ -6,16 +6,16 @@
   <div>
     <Header />
 
-    <UMain>
-      <UPage>
+    <CoreMain>
+      <CorePage>
         <template #left />
-        <UPage>
+        <CorePage>
           <slot />
           <template #right />
-        </UPage>
+        </CorePage>
         <template #right />
-      </UPage>
-    </UMain>
+      </CorePage>
+    </CoreMain>
 
     <Footer />
   </div>

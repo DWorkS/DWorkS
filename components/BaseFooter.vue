@@ -1,13 +1,13 @@
 <template>
   <footer :class="ui.wrapper" v-bind="attrs">
     <div v-if="$slots.top" :class="ui.top.wrapper">
-      <UContainer :class="ui.top.container">
+      <CoreContainer :class="ui.top.container">
         <slot name="top" />
-      </UContainer>
+      </CoreContainer>
     </div>
 
     <div :class="ui.bottom.wrapper">
-      <UContainer :class="ui.bottom.container">
+      <CoreContainer :class="ui.bottom.container">
         <div :class="ui.bottom.right">
           <slot name="right" />
         </div>
@@ -21,14 +21,13 @@
         <div :class="ui.bottom.left">
           <slot name="left" />
         </div>
-      </UContainer>
+      </CoreContainer>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import type { FooterLink } from '#ui-pro/types'
 
 const config = {
   wrapper: 'relative',

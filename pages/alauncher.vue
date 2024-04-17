@@ -19,7 +19,7 @@ const links = page.value.links
     <template #header>
       <PageHeader :title="page.title" />
     </template>
-    <UPageCard>
+    <CorePageCard>
       <span>
         <p>
           To see the <b>Google Now Feed</b> on the left, and make full use
@@ -29,10 +29,8 @@ const links = page.value.links
         <p class="line24">
           <b>Installation instructions</b><br>
           1. Go to this
-          <a
-            class="blue--text"
-            href="https://raw.githubusercontent.com/1hakr/ALauncher/master/companion-bridge-debug.apk"
-          >LINK</a><br>
+          <a class="blue--text"
+            href="https://raw.githubusercontent.com/1hakr/ALauncher/master/companion-bridge-debug.apk">LINK</a><br>
           2. Under assets, click on "companion-bridge-debug.apk"<br>
           3. Let your phone download the file<br>
           4. Install the file as an application<br>
@@ -44,8 +42,8 @@ const links = page.value.links
           for the installation<br>
         </p>
       </span>
-    </UPageCard>
-    <UPageCard class="my-6">
+    </CorePageCard>
+    <CorePageCard class="my-6">
       <div class="text">
         <b>Why do I need this?</b>
       </div>
@@ -62,8 +60,8 @@ const links = page.value.links
         from the Play Store by Google. Everything has been moved to this
         website since then, to prevent another suspension.
       </p>
-    </UPageCard>
-    <UPageCard class="my-6">
+    </CorePageCard>
+    <CorePageCard class="my-6">
       <div class="text">
         <b>Help, I am getting an error!</b>
       </div>
@@ -76,6 +74,6 @@ const links = page.value.links
         sure all third party Pixel Launchers are removed from your
         device before trying to install the Companion Bridge.
       </p>
-    </UPageCard>
+    </CorePageCard>
   </Container>
 </template>

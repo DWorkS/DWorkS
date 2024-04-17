@@ -22,8 +22,8 @@ const links = page.value.links
       <PageHeader :title="page.title" />
     </template>
 
-    <UPageGrid class="grid-cols-1 sm:grid-cols-2 xl:grid-cols-2">
-      <UPageCard class="min-h-[100px]">
+    <CorePageGrid class="grid-cols-1 sm:grid-cols-2 xl:grid-cols-2">
+      <CorePageCard class="min-h-[100px]">
         <template #title>
           <div class="flex items-center">
             <UAvatar size="2xl" src="/logo.png" alt="logo" class="mb-6 mr-4" />
@@ -35,8 +35,8 @@ const links = page.value.links
             {{ page.about }}
           </span>
         </template>
-      </UPageCard>
-      <UPageCard class="min-h-[300px]">
+      </CorePageCard>
+      <CorePageCard class="min-h-[300px]">
         <template #description>
           <div class="text-center">
             <UAvatar size="2xl" src="/images/profile.jpeg" alt="Avatar" class="mb-6" />
@@ -50,8 +50,8 @@ const links = page.value.links
             </div>
           </span>
         </template>
-      </UPageCard>
-      <UPageCard class="min-h-[300px]">
+      </CorePageCard>
+      <CorePageCard class="min-h-[300px]">
         <template #title>
           <span class="line-clamp-2 mb-6">Why DWorkS?</span>
         </template>
@@ -60,10 +60,10 @@ const links = page.value.links
             {{ page.origin }}
           </span>
         </template>
-      </UPageCard>
-      <UPageCard :ui="{ strategy: 'override', body: { padding: '' } }">
+      </CorePageCard>
+      <CorePageCard :ui="{ strategy: 'override', body: { padding: '' } }">
         <Map />
-      </UPageCard>
-    </UPageGrid>
+      </CorePageCard>
+    </CorePageGrid>
   </Container>
 </template>

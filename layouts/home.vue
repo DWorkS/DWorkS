@@ -5,9 +5,9 @@
   <div>
     <Header />
 
-    <UMain>
+    <CoreMain>
       <slot />
-    </UMain>
+    </CoreMain>
 
     <Footer />
   </div>

@@ -34,7 +34,7 @@ function loadFrame() {
     <template #header>
       <PageHeader :title="page.title" />
     </template>
-    <UPageCard>
+    <CorePageCard>
       <span>
         <ActiveLink title="DWorkS" to="/"><b>DWorkS</b></ActiveLink>
         is a <ActiveLink rel="noopener nofollow" target="_blank" title="Micro Startup"
@@ -51,8 +51,8 @@ function loadFrame() {
           rel="noopener nofollow" href="https://google.com/analytics">Google Analytics</a>, uptime by <a
           href="https://simpleops.io?referrer=visalist">Simple Ops</a>.
       </span>
-    </UPageCard>
-    <UPageCard class="my-4" :ui="{ strategy: 'override', body: { padding: '' } }">
+    </CorePageCard>
+    <CorePageCard class="my-4" :ui="{ strategy: 'override', body: { padding: '' } }">
       <div class="relative flex justify-center items-center h-[200px] sm:h-[400px] lg:h-[300px] xl:h-[520px]">
         <svg v-if="iframeProgress" aria-hidden="true"
           class="absolute w-16 h-16 text-transparent animate-spin fill-primary" viewBox="0 0 100 101" fill="none"
@@ -71,6 +71,6 @@ function loadFrame() {
             @load="loadFrame()" />
         </ClientOnly>
       </div>
-    </UPageCard>
+    </CorePageCard>
   </Container>
 </template>

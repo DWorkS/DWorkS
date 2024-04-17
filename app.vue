@@ -6,7 +6,6 @@
       <NuxtPage />
     </NuxtLayout>
 
-    <UNotifications />
   </div>
 </template>
 
@@ -39,8 +38,8 @@ useHead({
 
 useSeoMeta({
   titleTemplate: '%s - DWorkS',
-  ogImage: '/feature_grpahic.png',
-  twitterImage: '/feature_grpahic.png',
+  ogImage: '/feature_graphic.jpg',
+  twitterImage: '/feature_graphic.jpg',
   twitterCard: 'summary_large_image'
 })
 

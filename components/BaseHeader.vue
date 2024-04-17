@@ -2,7 +2,7 @@
   <header :class="ui.wrapper" v-bind="attrs">
     <slot name="top" />
 
-    <UContainer :class="ui.container">
+    <CoreContainer :class="ui.container">
       <div :class="ui.left">
         <slot name="left">
           <NuxtLink :to="localePath(to)" aria-label="logo" :class="ui.logo">
@@ -14,24 +14,20 @@
       </div>
 
       <slot name="center">
-        <UHeaderLinks :links="links" :class="ui.center" />
+        <HeaderLinks :links="links" :class="ui.center" />
       </slot>
 
       <div :class="ui.right">
         <slot name="right" />
 
         <slot name="panel-button" :open="isHeaderDialogOpen">
-          <UButton
-            v-if="links.length || $slots.panel"
-            :class="ui.button.base"
-            v-bind="($ui?.button?.secondary as any)"
+          <UButton v-if="links.length || $slots.panel" :class="ui.button.base" v-bind="($ui?.button?.secondary as any)"
             :aria-label="`${isHeaderDialogOpen ? 'Close' : 'Open'} Menu`"
             :icon="isHeaderDialogOpen ? ui.button.icon.close : ui.button.icon.open"
-            @click="isHeaderDialogOpen = !isHeaderDialogOpen"
-          />
+            @click="isHeaderDialogOpen = !isHeaderDialogOpen" />
         </slot>
       </div>
-    </UContainer>
+    </CoreContainer>
 
     <slot name="bottom" />
 
@@ -56,20 +52,17 @@
                 <slot name="right" />
 
                 <slot name="panel-button" :open="isHeaderDialogOpen">
-                  <UButton
-                    :class="ui.button.base"
-                    v-bind="($ui?.button?.secondary as any)"
+                  <UButton :class="ui.button.base" v-bind="($ui?.button?.secondary as any)"
                     :aria-label="`${isHeaderDialogOpen ? 'Close' : 'Open'} Menu`"
                     :icon="isHeaderDialogOpen ? ui.button.icon.close : ui.button.icon.open"
-                    @click="isHeaderDialogOpen = !isHeaderDialogOpen"
-                  />
+                    @click="isHeaderDialogOpen = !isHeaderDialogOpen" />
                 </slot>
               </div>
             </div>
           </div>
           <div :class="ui.panel.body">
             <slot name="panel">
-              <UAsideLinks :links="links" />
+              <CoreAsideLinks :links="links" />
             </slot>
           </div>
         </DialogPanel>
@@ -81,7 +74,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
 import { Dialog, DialogPanel, TransitionRoot, provideUseId } from '@headlessui/vue'
-import type { HeaderLink } from '#ui-pro/types'
 import { useId } from '#imports'
 const localePath = useLocalePath()
 const appConfig = useAppConfig()
@@ -135,7 +127,7 @@ const props = defineProps({
 })
 
 const route = useRoute()
-const { isHeaderDialogOpen } = useUIState()
+const isHeaderDialogOpen = ref(false) //useUIState()
 const { ui, attrs } = useUI('header', toRef(props, 'ui'), config, toRef(props, 'class'), true)
 
 
