@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import MapSimple from '~/components/MapSimple.vue';
+
 const route = useRoute()
 const { buildDate } = useAppConfig()
 const buildTime = relativeDate(buildDate)
@@ -62,7 +64,7 @@ const links = page.value.links
         </template>
       </CorePageCard>
       <CorePageCard :ui="{ strategy: 'override', body: { padding: '' } }">
-        <Map />
+        <MapSimple />
       </CorePageCard>
     </CorePageGrid>
   </Container>

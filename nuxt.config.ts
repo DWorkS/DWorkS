@@ -14,11 +14,13 @@ export default defineNuxtConfig({
     'nuxt-delay-hydration',
     'nuxt-build-cache',
     'nuxt-date-fns',
+    'nuxt-gtag',
     'nuxt-og-image'
   ],
   delayHydration: { 
     mode: 'mount'
-  }  ,
+  },
+  compatibilityDate: '2024-08-21',
   hooks: {
     // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
     'components:extend': (components) => {
@@ -26,9 +28,6 @@ export default defineNuxtConfig({
 
       globals.forEach((c) => c.global = true)
     }
-  },
-  ui: {
-    icons: ['heroicons', 'simple-icons']
   },
   routeRules: {
     '/policies/privacy': { redirect: { to: '/privacy', statusCode: 301 } },
@@ -70,5 +69,8 @@ export default defineNuxtConfig({
         file: 'en.json'
       }
     ],
+  },
+  gtag: {
+    id: 'G-JQ2311JC7Y'
   }
 })
