@@ -29,7 +29,9 @@ export default defineNuxtConfig({
       globals.forEach((c) => c.global = true)
     }
   },
+   
   routeRules: {
+    '/about.html': { redirect: { to: '/', statusCode: 301 } },
     '/policies/privacy': { redirect: { to: '/privacy', statusCode: 301 } },
     '/policies/terms': { redirect: { to: '/terms', statusCode: 301 } },
     '/policies/privacy.html': { redirect: { to: '/privacy', statusCode: 301 } },
@@ -52,11 +54,6 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     baseUrl: 'https://dworks.io',
     defaultLocale: 'en',
-    experimental: {
-      localeDetector: './localeDetector.ts',
-      switchLocalePathLinkSSR: true,
-      autoImportTranslationFunctions: true
-    },
     debug: false,
     dynamicRouteParams: true,
     skipSettingLocaleOnNavigate: true,
