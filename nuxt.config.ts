@@ -13,7 +13,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-delay-hydration',
     'nuxt-build-cache',
-    'nuxt-date-fns',
     'nuxt-gtag',
     'nuxt-og-image'
   ],
