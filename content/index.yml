@@ -15,7 +15,7 @@ hero:
     - label: Contact US
       icon: i-heroicons-chat-bubble-bottom-center-text
       size: xl
-      color: gray
+      color: neutral
       to: http://t.me/OneHakr
       target: _blank
       trailing: true

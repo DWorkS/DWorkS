@@ -1,0 +1,28 @@
+{
+  "site": {
+    "title": "DWorkS",
+    "description": "Open Startup - DWorkS"
+  }
+  ,
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "open": "Open Startup",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "footer": {
+    "copyright": "Copyright",
+    "rights": "All rights reserved."
+  },
+  "open": {
+    "intro": "DWorkS is an Open Startup™.",
+    "proud": "I'm proud to share DWorkS stats as part of the Open Startups movement.",
+    "revenue": "Revenue is partially through Stripe, traffic by Google Analytics, uptime by Simple Ops."
+  },
+  "about": {
+    "buildLabel": "Build:",
+    "whyTitle": "Why DWorkS?",
+    "building": "Building with ❤️ in Down Under 🦘 🇦🇺"
+  }
+}

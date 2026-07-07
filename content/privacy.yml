@@ -1,9 +1,0 @@
-title: Privacy Policy
-head.title: Privacy Policy
-description: 'Privacy Policy of DWorkS.'
-navigation: false
-links:
-  - label: 'Home'
-    to: '/'
-  - label: 'Privacy'
-    to: '/privacy'
